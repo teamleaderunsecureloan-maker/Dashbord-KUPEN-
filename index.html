@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+<!--
+==============================================================================
+DASHBOARD AUTO-UPDATE
+==============================================================================
+Last Updated: 2026-01-30 03:34:49 (Jakarta Time)
+Latest Period: 2026-01
+Total Periods: 25
+Updated by: KUPEN Dashboard Auto-Update Script (Step 2C)
+Data Source: Google Drive (/content/drive/My Drive/KUPEN_Dashboard_Data/)
+==============================================================================
+-->
+
 <!-- 
 ==============================================================================
 DASHBOARD AUTO-UPDATE
@@ -649,19 +661,19 @@ Loading...
 const summaryData = [
   {
     "period": "2026-01",
-    "portfolio": 19851830922825.48,
-    "balance": 18389909307806.863,
-    "docf": 1461921615018.6199,
-    "interest_income": 162690176652.59,
-    "amortize_direct_cost": 14075717445.568798,
-    "new_disburse": 24483287806.34,
-    "new_disburse_count": 615,
-    "new_interest_income": 238734470.84000003,
-    "special_mention": 109779669167.54,
-    "npl": 64228085493.310005,
-    "ckpn": 77699996045.94998,
-    "npl_ratio": 0.0032353733891346543,
-    "coverage_ratio": 1.2097510839559933
+    "portfolio": 19849775789287.9,
+    "balance": 18388472663625.03,
+    "docf": 1461303125662.87,
+    "interest_income": 162678279151.36002,
+    "amortize_direct_cost": 14074263565.555422,
+    "new_disburse": 25221772710.600002,
+    "new_disburse_count": 637,
+    "new_interest_income": 246001783.34,
+    "special_mention": 109769832534.79001,
+    "npl": 64222484961.75,
+    "ckpn": 77699922095.33002,
+    "npl_ratio": 0.003235426215565025,
+    "coverage_ratio": 1.2098554290075663
   },
   {
     "period": "2025-12",
@@ -1052,15 +1064,15 @@ const summaryData = [
 const lostData = [
   {
     "period": "2026-01",
-    "lost_portfolio": 7941659897.860001,
-    "lost_count": 510,
-    "direct_cost": 111518954.97999996,
-    "lunas": 436795339.36999977,
-    "pelunasan": 6030811590.860003,
+    "lost_portfolio": 7994369538.86,
+    "lost_count": 516,
+    "direct_cost": 112411166.43999997,
+    "lunas": 441579418.46999985,
+    "pelunasan": 6072148900.959999,
     "pelunasan_jf": 1326995020.9599998,
     "rehab": 147057946.67000002,
     "restruct": 0.0,
-    "passaway": 0.0,
+    "passaway": 6588251.8,
     "writeoff": 0.0
   },
   {
@@ -1411,25 +1423,11 @@ const ageDistribution = {
   ],
   "2024-02": [
     {
-      "age_group": "> 65 th",
-      "debitur": 24507,
-      "portfolio": 2423475776248.15,
+      "age_group": "51-55 th",
+      "debitur": 13218,
+      "portfolio": 2250314600535.29,
       "period": "2024-02",
-      "avg_ticket": 98889124.58677724
-    },
-    {
-      "age_group": "56-60 th",
-      "debitur": 29050,
-      "portfolio": 5665036029501.9,
-      "period": "2024-02",
-      "avg_ticket": 195009846.1102203
-    },
-    {
-      "age_group": "61-65 th",
-      "debitur": 41643,
-      "portfolio": 8268961805242.99,
-      "period": "2024-02",
-      "avg_ticket": 198567869.87592128
+      "avg_ticket": 170246224.8854055
     },
     {
       "age_group": "46-50 th",
@@ -1446,11 +1444,25 @@ const ageDistribution = {
       "avg_ticket": 125322772.33468878
     },
     {
-      "age_group": "51-55 th",
-      "debitur": 13218,
-      "portfolio": 2250314600535.29,
+      "age_group": "56-60 th",
+      "debitur": 29050,
+      "portfolio": 5665036029501.9,
       "period": "2024-02",
-      "avg_ticket": 170246224.8854055
+      "avg_ticket": 195009846.1102203
+    },
+    {
+      "age_group": "> 65 th",
+      "debitur": 24507,
+      "portfolio": 2423475776248.15,
+      "period": "2024-02",
+      "avg_ticket": 98889124.58677724
+    },
+    {
+      "age_group": "61-65 th",
+      "debitur": 41643,
+      "portfolio": 8268961805242.99,
+      "period": "2024-02",
+      "avg_ticket": 198567869.87592128
     }
   ],
   "2024-03": [
@@ -1499,34 +1511,6 @@ const ageDistribution = {
   ],
   "2024-04": [
     {
-      "age_group": "61-65 th",
-      "debitur": 42538,
-      "portfolio": 8601329764467.95,
-      "period": "2024-04",
-      "avg_ticket": 202203436.09168157
-    },
-    {
-      "age_group": "> 65 th",
-      "debitur": 24819,
-      "portfolio": 2497997403704.33,
-      "period": "2024-04",
-      "avg_ticket": 100648591.95391957
-    },
-    {
-      "age_group": "56-60 th",
-      "debitur": 28919,
-      "portfolio": 5703283027396.28,
-      "period": "2024-04",
-      "avg_ticket": 197215776.04330304
-    },
-    {
-      "age_group": "46-50 th",
-      "debitur": 4313,
-      "portfolio": 641604992938.39,
-      "period": "2024-04",
-      "avg_ticket": 148760721.7571041
-    },
-    {
       "age_group": "40-45 th",
       "debitur": 1470,
       "portfolio": 186726359808.14,
@@ -1539,6 +1523,34 @@ const ageDistribution = {
       "portfolio": 2267635507025.01,
       "period": "2024-04",
       "avg_ticket": 171972964.282194
+    },
+    {
+      "age_group": "46-50 th",
+      "debitur": 4313,
+      "portfolio": 641604992938.39,
+      "period": "2024-04",
+      "avg_ticket": 148760721.7571041
+    },
+    {
+      "age_group": "> 65 th",
+      "debitur": 24819,
+      "portfolio": 2497997403704.33,
+      "period": "2024-04",
+      "avg_ticket": 100648591.95391957
+    },
+    {
+      "age_group": "61-65 th",
+      "debitur": 42538,
+      "portfolio": 8601329764467.95,
+      "period": "2024-04",
+      "avg_ticket": 202203436.09168157
+    },
+    {
+      "age_group": "56-60 th",
+      "debitur": 28919,
+      "portfolio": 5703283027396.28,
+      "period": "2024-04",
+      "avg_ticket": 197215776.04330304
     }
   ],
   "2024-05": [
@@ -1631,11 +1643,25 @@ const ageDistribution = {
   ],
   "2024-07": [
     {
-      "age_group": "> 65 th",
-      "debitur": 25670,
-      "portfolio": 2682503632018.11,
+      "age_group": "40-45 th",
+      "debitur": 1445,
+      "portfolio": 185569672067.94,
       "period": "2024-07",
-      "avg_ticket": 104499557.14912777
+      "avg_ticket": 128421918.38611765
+    },
+    {
+      "age_group": "46-50 th",
+      "debitur": 4370,
+      "portfolio": 660090304040.2,
+      "period": "2024-07",
+      "avg_ticket": 151050412.82384437
+    },
+    {
+      "age_group": "51-55 th",
+      "debitur": 13032,
+      "portfolio": 2281009256292.39,
+      "period": "2024-07",
+      "avg_ticket": 175031403.95122698
     },
     {
       "age_group": "56-60 th",
@@ -1652,25 +1678,11 @@ const ageDistribution = {
       "avg_ticket": 208990105.94772837
     },
     {
-      "age_group": "51-55 th",
-      "debitur": 13032,
-      "portfolio": 2281009256292.39,
+      "age_group": "> 65 th",
+      "debitur": 25670,
+      "portfolio": 2682503632018.11,
       "period": "2024-07",
-      "avg_ticket": 175031403.95122698
-    },
-    {
-      "age_group": "40-45 th",
-      "debitur": 1445,
-      "portfolio": 185569672067.94,
-      "period": "2024-07",
-      "avg_ticket": 128421918.38611765
-    },
-    {
-      "age_group": "46-50 th",
-      "debitur": 4370,
-      "portfolio": 660090304040.2,
-      "period": "2024-07",
-      "avg_ticket": 151050412.82384437
+      "avg_ticket": 104499557.14912777
     }
   ],
   "2024-08": [
@@ -1719,6 +1731,27 @@ const ageDistribution = {
   ],
   "2024-09": [
     {
+      "age_group": "51-55 th",
+      "debitur": 12927,
+      "portfolio": 2283934419015.93,
+      "period": "2024-09",
+      "avg_ticket": 176679385.70557207
+    },
+    {
+      "age_group": "46-50 th",
+      "debitur": 4393,
+      "portfolio": 670923780607.78,
+      "period": "2024-09",
+      "avg_ticket": 152725650.03591624
+    },
+    {
+      "age_group": "40-45 th",
+      "debitur": 1395,
+      "portfolio": 179024557718.81,
+      "period": "2024-09",
+      "avg_ticket": 128333016.2858853
+    },
+    {
       "age_group": "> 65 th",
       "debitur": 26228,
       "portfolio": 2834954631786.94,
@@ -1738,58 +1771,9 @@ const ageDistribution = {
       "portfolio": 5850559830599.52,
       "period": "2024-09",
       "avg_ticket": 202989377.2326528
-    },
-    {
-      "age_group": "40-45 th",
-      "debitur": 1395,
-      "portfolio": 179024557718.81,
-      "period": "2024-09",
-      "avg_ticket": 128333016.2858853
-    },
-    {
-      "age_group": "46-50 th",
-      "debitur": 4393,
-      "portfolio": 670923780607.78,
-      "period": "2024-09",
-      "avg_ticket": 152725650.03591624
-    },
-    {
-      "age_group": "51-55 th",
-      "debitur": 12927,
-      "portfolio": 2283934419015.93,
-      "period": "2024-09",
-      "avg_ticket": 176679385.70557207
     }
   ],
   "2024-10": [
-    {
-      "age_group": "61-65 th",
-      "debitur": 44337,
-      "portfolio": 9477338974969.87,
-      "period": "2024-10",
-      "avg_ticket": 213756884.20438614
-    },
-    {
-      "age_group": "> 65 th",
-      "debitur": 26329,
-      "portfolio": 2889005528899.44,
-      "period": "2024-10",
-      "avg_ticket": 109727127.08038436
-    },
-    {
-      "age_group": "56-60 th",
-      "debitur": 28891,
-      "portfolio": 5876493903845.85,
-      "period": "2024-10",
-      "avg_ticket": 203402232.66227716
-    },
-    {
-      "age_group": "46-50 th",
-      "debitur": 4419,
-      "portfolio": 678590135431.66,
-      "period": "2024-10",
-      "avg_ticket": 153561922.47831184
-    },
     {
       "age_group": "40-45 th",
       "debitur": 1393,
@@ -1803,6 +1787,34 @@ const ageDistribution = {
       "portfolio": 2311978052292.09,
       "period": "2024-10",
       "avg_ticket": 177926585.52347928
+    },
+    {
+      "age_group": "46-50 th",
+      "debitur": 4419,
+      "portfolio": 678590135431.66,
+      "period": "2024-10",
+      "avg_ticket": 153561922.47831184
+    },
+    {
+      "age_group": "> 65 th",
+      "debitur": 26329,
+      "portfolio": 2889005528899.44,
+      "period": "2024-10",
+      "avg_ticket": 109727127.08038436
+    },
+    {
+      "age_group": "61-65 th",
+      "debitur": 44337,
+      "portfolio": 9477338974969.87,
+      "period": "2024-10",
+      "avg_ticket": 213756884.20438614
+    },
+    {
+      "age_group": "56-60 th",
+      "debitur": 28891,
+      "portfolio": 5876493903845.85,
+      "period": "2024-10",
+      "avg_ticket": 203402232.66227716
     }
   ],
   "2024-11": [
@@ -1851,6 +1863,13 @@ const ageDistribution = {
   ],
   "2024-12": [
     {
+      "age_group": "61-65 th",
+      "debitur": 43927,
+      "portfolio": 9450803069783.9,
+      "period": "2024-12",
+      "avg_ticket": 215147928.83155918
+    },
+    {
       "age_group": "40-45 th",
       "debitur": 1368,
       "portfolio": 176786020251.88,
@@ -1879,13 +1898,6 @@ const ageDistribution = {
       "avg_ticket": 202482086.3872768
     },
     {
-      "age_group": "61-65 th",
-      "debitur": 43927,
-      "portfolio": 9450803069783.9,
-      "period": "2024-12",
-      "avg_ticket": 215147928.83155918
-    },
-    {
       "age_group": "> 65 th",
       "debitur": 26276,
       "portfolio": 2936450904042.1,
@@ -1894,34 +1906,6 @@ const ageDistribution = {
     }
   ],
   "2025-01": [
-    {
-      "age_group": "61-65 th",
-      "debitur": 43873,
-      "portfolio": 9451670070730.85,
-      "period": "2025-01",
-      "avg_ticket": 215432499.95967564
-    },
-    {
-      "age_group": "> 65 th",
-      "debitur": 26782,
-      "portfolio": 3021393484135.96,
-      "period": "2025-01",
-      "avg_ticket": 112814333.6620103
-    },
-    {
-      "age_group": "56-60 th",
-      "debitur": 27715,
-      "portfolio": 5572602547134.42,
-      "period": "2025-01",
-      "avg_ticket": 201068105.61553022
-    },
-    {
-      "age_group": "51-55 th",
-      "debitur": 12680,
-      "portfolio": 2265411129187.98,
-      "period": "2025-01",
-      "avg_ticket": 178660183.6899038
-    },
     {
       "age_group": "46-50 th",
       "debitur": 4380,
@@ -1935,6 +1919,34 @@ const ageDistribution = {
       "portfolio": 174896512789.25,
       "period": "2025-01",
       "avg_ticket": 128979729.19561209
+    },
+    {
+      "age_group": "51-55 th",
+      "debitur": 12680,
+      "portfolio": 2265411129187.98,
+      "period": "2025-01",
+      "avg_ticket": 178660183.6899038
+    },
+    {
+      "age_group": "56-60 th",
+      "debitur": 27715,
+      "portfolio": 5572602547134.42,
+      "period": "2025-01",
+      "avg_ticket": 201068105.61553022
+    },
+    {
+      "age_group": "> 65 th",
+      "debitur": 26782,
+      "portfolio": 3021393484135.96,
+      "period": "2025-01",
+      "avg_ticket": 112814333.6620103
+    },
+    {
+      "age_group": "61-65 th",
+      "debitur": 43873,
+      "portfolio": 9451670070730.85,
+      "period": "2025-01",
+      "avg_ticket": 215432499.95967564
     }
   ],
   "2025-02": [
@@ -1983,6 +1995,27 @@ const ageDistribution = {
   ],
   "2025-03": [
     {
+      "age_group": "51-55 th",
+      "debitur": 12461,
+      "portfolio": 2212188203975.36,
+      "period": "2025-03",
+      "avg_ticket": 177528946.63151914
+    },
+    {
+      "age_group": "46-50 th",
+      "debitur": 4387,
+      "portfolio": 674149965650.58,
+      "period": "2025-03",
+      "avg_ticket": 153669926.0657807
+    },
+    {
+      "age_group": "40-45 th",
+      "debitur": 1313,
+      "portfolio": 168763658620.72,
+      "period": "2025-03",
+      "avg_ticket": 128532870.2366489
+    },
+    {
       "age_group": "> 65 th",
       "debitur": 27121,
       "portfolio": 3098791256122.62,
@@ -2002,58 +2035,9 @@ const ageDistribution = {
       "portfolio": 5413351181201.65,
       "period": "2025-03",
       "avg_ticket": 199328049.97428566
-    },
-    {
-      "age_group": "40-45 th",
-      "debitur": 1313,
-      "portfolio": 168763658620.72,
-      "period": "2025-03",
-      "avg_ticket": 128532870.2366489
-    },
-    {
-      "age_group": "46-50 th",
-      "debitur": 4387,
-      "portfolio": 674149965650.58,
-      "period": "2025-03",
-      "avg_ticket": 153669926.0657807
-    },
-    {
-      "age_group": "51-55 th",
-      "debitur": 12461,
-      "portfolio": 2212188203975.36,
-      "period": "2025-03",
-      "avg_ticket": 177528946.63151914
     }
   ],
   "2025-04": [
-    {
-      "age_group": "61-65 th",
-      "debitur": 43870,
-      "portfolio": 9438696174665.38,
-      "period": "2025-04",
-      "avg_ticket": 215151497.0290718
-    },
-    {
-      "age_group": "> 65 th",
-      "debitur": 27408,
-      "portfolio": 3160907053193.01,
-      "period": "2025-04",
-      "avg_ticket": 115327898.90517403
-    },
-    {
-      "age_group": "56-60 th",
-      "debitur": 26829,
-      "portfolio": 5319914659273.08,
-      "period": "2025-04",
-      "avg_ticket": 198289711.1063804
-    },
-    {
-      "age_group": "51-55 th",
-      "debitur": 12325,
-      "portfolio": 2183958706600.96,
-      "period": "2025-04",
-      "avg_ticket": 177197460.9818223
-    },
     {
       "age_group": "46-50 th",
       "debitur": 4351,
@@ -2067,6 +2051,34 @@ const ageDistribution = {
       "portfolio": 164243421698.62,
       "period": "2025-04",
       "avg_ticket": 128114993.52466458
+    },
+    {
+      "age_group": "51-55 th",
+      "debitur": 12325,
+      "portfolio": 2183958706600.96,
+      "period": "2025-04",
+      "avg_ticket": 177197460.9818223
+    },
+    {
+      "age_group": "56-60 th",
+      "debitur": 26829,
+      "portfolio": 5319914659273.08,
+      "period": "2025-04",
+      "avg_ticket": 198289711.1063804
+    },
+    {
+      "age_group": "> 65 th",
+      "debitur": 27408,
+      "portfolio": 3160907053193.01,
+      "period": "2025-04",
+      "avg_ticket": 115327898.90517403
+    },
+    {
+      "age_group": "61-65 th",
+      "debitur": 43870,
+      "portfolio": 9438696174665.38,
+      "period": "2025-04",
+      "avg_ticket": 215151497.0290718
     }
   ],
   "2025-05": [
@@ -2159,25 +2171,11 @@ const ageDistribution = {
   ],
   "2025-07": [
     {
-      "age_group": "> 65 th",
-      "debitur": 28554,
-      "portfolio": 3383169955956.51,
+      "age_group": "40-45 th",
+      "debitur": 1205,
+      "portfolio": 152894568835.71,
       "period": "2025-07",
-      "avg_ticket": 118483223.22464487
-    },
-    {
-      "age_group": "56-60 th",
-      "debitur": 25863,
-      "portfolio": 5030710031837.32,
-      "period": "2025-07",
-      "avg_ticket": 194513785.40143526
-    },
-    {
-      "age_group": "61-65 th",
-      "debitur": 43711,
-      "portfolio": 9410028067902.71,
-      "period": "2025-07",
-      "avg_ticket": 215278261.03046626
+      "avg_ticket": 126883459.61469708
     },
     {
       "age_group": "46-50 th",
@@ -2194,34 +2192,34 @@ const ageDistribution = {
       "avg_ticket": 176906553.4135657
     },
     {
-      "age_group": "40-45 th",
-      "debitur": 1205,
-      "portfolio": 152894568835.71,
+      "age_group": "56-60 th",
+      "debitur": 25863,
+      "portfolio": 5030710031837.32,
       "period": "2025-07",
-      "avg_ticket": 126883459.61469708
+      "avg_ticket": 194513785.40143526
+    },
+    {
+      "age_group": "61-65 th",
+      "debitur": 43711,
+      "portfolio": 9410028067902.71,
+      "period": "2025-07",
+      "avg_ticket": 215278261.03046626
+    },
+    {
+      "age_group": "> 65 th",
+      "debitur": 28554,
+      "portfolio": 3383169955956.51,
+      "period": "2025-07",
+      "avg_ticket": 118483223.22464487
     }
   ],
   "2025-08": [
     {
-      "age_group": "61-65 th",
-      "debitur": 43532,
-      "portfolio": 9372017514117.79,
+      "age_group": "40-45 th",
+      "debitur": 1172,
+      "portfolio": 148068804734.23,
       "period": "2025-08",
-      "avg_ticket": 215290304.00895408
-    },
-    {
-      "age_group": "56-60 th",
-      "debitur": 25566,
-      "portfolio": 4947420967351.69,
-      "period": "2025-08",
-      "avg_ticket": 193515644.50253034
-    },
-    {
-      "age_group": "> 65 th",
-      "debitur": 28969,
-      "portfolio": 3468325933138.52,
-      "period": "2025-08",
-      "avg_ticket": 119725428.32470986
+      "avg_ticket": 126338570.59234643
     },
     {
       "age_group": "46-50 th",
@@ -2231,18 +2229,32 @@ const ageDistribution = {
       "avg_ticket": 153639056.35620615
     },
     {
-      "age_group": "40-45 th",
-      "debitur": 1172,
-      "portfolio": 148068804734.23,
-      "period": "2025-08",
-      "avg_ticket": 126338570.59234643
-    },
-    {
       "age_group": "51-55 th",
       "debitur": 11730,
       "portfolio": 2076011077029.68,
       "period": "2025-08",
       "avg_ticket": 176983041.5200068
+    },
+    {
+      "age_group": "56-60 th",
+      "debitur": 25566,
+      "portfolio": 4947420967351.69,
+      "period": "2025-08",
+      "avg_ticket": 193515644.50253034
+    },
+    {
+      "age_group": "61-65 th",
+      "debitur": 43532,
+      "portfolio": 9372017514117.79,
+      "period": "2025-08",
+      "avg_ticket": 215290304.00895408
+    },
+    {
+      "age_group": "> 65 th",
+      "debitur": 28969,
+      "portfolio": 3468325933138.52,
+      "period": "2025-08",
+      "avg_ticket": 119725428.32470986
     }
   ],
   "2025-09": [
@@ -2291,25 +2303,11 @@ const ageDistribution = {
   ],
   "2025-10": [
     {
-      "age_group": "> 65 th",
-      "debitur": 29261,
-      "portfolio": 3576362170660.27,
+      "age_group": "51-55 th",
+      "debitur": 11414,
+      "portfolio": 2013805595549.35,
       "period": "2025-10",
-      "avg_ticket": 122222828.01887393
-    },
-    {
-      "age_group": "56-60 th",
-      "debitur": 25006,
-      "portfolio": 4799574128025.68,
-      "period": "2025-10",
-      "avg_ticket": 191936900.2649636
-    },
-    {
-      "age_group": "61-65 th",
-      "debitur": 42821,
-      "portfolio": 9199667680243.53,
-      "period": "2025-10",
-      "avg_ticket": 214840094.35191914
+      "avg_ticket": 176432941.6111223
     },
     {
       "age_group": "46-50 th",
@@ -2326,11 +2324,25 @@ const ageDistribution = {
       "avg_ticket": 126611116.39053057
     },
     {
-      "age_group": "51-55 th",
-      "debitur": 11414,
-      "portfolio": 2013805595549.35,
+      "age_group": "56-60 th",
+      "debitur": 25006,
+      "portfolio": 4799574128025.68,
       "period": "2025-10",
-      "avg_ticket": 176432941.6111223
+      "avg_ticket": 191936900.2649636
+    },
+    {
+      "age_group": "> 65 th",
+      "debitur": 29261,
+      "portfolio": 3576362170660.27,
+      "period": "2025-10",
+      "avg_ticket": 122222828.01887393
+    },
+    {
+      "age_group": "61-65 th",
+      "debitur": 42821,
+      "portfolio": 9199667680243.53,
+      "period": "2025-10",
+      "avg_ticket": 214840094.35191914
     }
   ],
   "2025-11": [
@@ -2379,32 +2391,11 @@ const ageDistribution = {
   ],
   "2025-12": [
     {
-      "age_group": "61-65 th",
-      "debitur": 42077,
-      "portfolio": 9011534159825.06,
+      "age_group": "40-45 th",
+      "debitur": 1051,
+      "portfolio": 131024964299.53,
       "period": "2025-12",
-      "avg_ticket": 214167696.3620282
-    },
-    {
-      "age_group": "56-60 th",
-      "debitur": 24405,
-      "portfolio": 4639069721036.17,
-      "period": "2025-12",
-      "avg_ticket": 190086856.01459414
-    },
-    {
-      "age_group": "> 65 th",
-      "debitur": 29312,
-      "portfolio": 3632411957157.86,
-      "period": "2025-12",
-      "avg_ticket": 123922351.15849686
-    },
-    {
-      "age_group": "51-55 th",
-      "debitur": 11066,
-      "portfolio": 1942136767218.36,
-      "period": "2025-12",
-      "avg_ticket": 175504858.77628413
+      "avg_ticket": 124666949.85683158
     },
     {
       "age_group": "46-50 th",
@@ -2414,100 +2405,121 @@ const ageDistribution = {
       "avg_ticket": 150860082.50084087
     },
     {
-      "age_group": "40-45 th",
-      "debitur": 1051,
-      "portfolio": 131024964299.53,
+      "age_group": "51-55 th",
+      "debitur": 11066,
+      "portfolio": 1942136767218.36,
       "period": "2025-12",
-      "avg_ticket": 124666949.85683158
+      "avg_ticket": 175504858.77628413
+    },
+    {
+      "age_group": "56-60 th",
+      "debitur": 24405,
+      "portfolio": 4639069721036.17,
+      "period": "2025-12",
+      "avg_ticket": 190086856.01459414
+    },
+    {
+      "age_group": "61-65 th",
+      "debitur": 42077,
+      "portfolio": 9011534159825.06,
+      "period": "2025-12",
+      "avg_ticket": 214167696.3620282
+    },
+    {
+      "age_group": "> 65 th",
+      "debitur": 29312,
+      "portfolio": 3632411957157.86,
+      "period": "2025-12",
+      "avg_ticket": 123922351.15849686
     }
   ],
   "2026-01": [
     {
       "age_group": "61-65 th",
-      "debitur": 41668,
-      "portfolio": 8915932582357.54,
+      "debitur": 41669,
+      "portfolio": 8914946719191.63,
       "period": "2026-01",
-      "avg_ticket": 213975534.75946864
+      "avg_ticket": 213946740.24314553
     },
     {
       "age_group": "40-45 th",
-      "debitur": 1019,
-      "portfolio": 125859036321.08,
+      "debitur": 1020,
+      "portfolio": 125891311880.03,
       "period": "2026-01",
-      "avg_ticket": 123512302.57220805
+      "avg_ticket": 123422854.78434314
     },
     {
       "age_group": "46-50 th",
-      "debitur": 3924,
-      "portfolio": 589501011440.24,
+      "debitur": 3925,
+      "portfolio": 589510289783.53,
       "period": "2026-01",
-      "avg_ticket": 150229615.5556167
+      "avg_ticket": 150193704.40344715
     },
     {
       "age_group": "51-55 th",
-      "debitur": 10849,
-      "portfolio": 1895906891730.92,
+      "debitur": 10850,
+      "portfolio": 1895886473945.36,
       "period": "2026-01",
-      "avg_ticket": 174754068.7372956
+      "avg_ticket": 174736080.54795945
     },
     {
       "age_group": "56-60 th",
-      "debitur": 24152,
-      "portfolio": 4567073100056.47,
+      "debitur": 24154,
+      "portfolio": 4566805132228.47,
       "period": "2026-01",
-      "avg_ticket": 189097097.55119532
+      "avg_ticket": 189070345.79069594
     },
     {
       "age_group": "> 65 th",
-      "debitur": 30058,
-      "portfolio": 3757558300919.23,
+      "debitur": 30055,
+      "portfolio": 3756735862258.88,
       "period": "2026-01",
-      "avg_ticket": 125010256.8673641
+      "avg_ticket": 124995370.5625979
     }
   ]
 };
 
 const productData = [
   {
-    "Product": "KREDIT UMUM PENSIUNAN (KUPEN)",
-    "Facility_Type": "New-Take Over",
-    "Amount": 238516263.94,
-    "Count": 2,
-    "Period": "2026-01"
-  },
-  {
     "Product": "KREDIT UMUM PENSIUNAN HYBRID",
     "Facility_Type": "TOP UP",
-    "Amount": 282404458.29,
+    "Amount": 282406265.58,
     "Count": 1,
     "Period": "2026-01"
   },
   {
+    "Product": "KREDIT UMUM PENSIUNAN (KUPEN)",
+    "Facility_Type": "New-Take Over",
+    "Amount": 323787898.82,
+    "Count": 3,
+    "Period": "2026-01"
+  },
+  {
     "Product": "KREDIT UMUM PENSIUNAN HYBRID",
     "Facility_Type": "New-Take Over",
-    "Amount": 769978707.02,
+    "Amount": 769983137.63,
     "Count": 3,
     "Period": "2026-01"
   },
   {
     "Product": "KREDIT UMUM PENSIUNAN HYBRID",
     "Facility_Type": "NEW",
-    "Amount": 1530980154.18,
+    "Amount": 1530993117.52,
     "Count": 14,
     "Period": "2026-01"
   },
   {
     "Product": "KREDIT UMUM PENSIUNAN JANDA",
     "Facility_Type": "NEW",
-    "Amount": 5764858111.34,
-    "Count": 192,
+    "Amount": 6154591472.54,
+    "Count": 206,
     "Period": "2026-01"
   },
   {
     "Product": "KREDIT UMUM PENSIUNAN (KUPEN)",
     "Facility_Type": "NEW",
-    "Amount": 15896550111.57,
-    "Count": 403,
+    "Amount": 16160010818.51,
+    "Count": 410,
     "Period": "2026-01"
   },
   {
