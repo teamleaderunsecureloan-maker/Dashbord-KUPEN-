@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
+
 <!--
 ==============================================================================
 DASHBOARD AUTO-UPDATE
 ==============================================================================
-Last Updated: 2026-01-30 03:34:49 (Jakarta Time)
+Last Updated: 2026-02-02 01:57:14 (Jakarta Time)
 Latest Period: 2026-01
 Total Periods: 25
-Updated by: KUPEN Dashboard Auto-Update Script (Step 2C)
+Updated by: KUPEN Dashboard Auto-Update Script (Step 2C - FIXED)
 Data Source: Google Drive (/content/drive/My Drive/KUPEN_Dashboard_Data/)
 ==============================================================================
 -->
+
 
 <!-- 
 ==============================================================================
@@ -890,7 +892,8 @@ function checkPassword() {
 
 <div class="period-selector">
 <label style="color: #6b7280; font-weight: 500;">Periode:</label>
-<select id="monthSelector" onchange="updateDashboard()"><option value="2026-01">Januari 2026</option>
+<select id="monthSelector" onchange="updateDashboard()">
+<option value="2026-01">Januari 2026</option>
 <option value="2025-12">Desember 2025</option>
 <option value="2025-11">November 2025</option>
 <option value="2025-10">Oktober 2025</option>
@@ -1452,8 +1455,8 @@ const lostData = [
     "lost_portfolio": 7994369538.86,
     "lost_count": 516,
     "direct_cost": 112411166.43999997,
-    "lunas": 441579418.46999985,
-    "pelunasan": 6072148900.959999,
+    "lunas": 441579418.4699998,
+    "pelunasan": 6072148900.960003,
     "pelunasan_jf": 1326995020.9599998,
     "rehab": 147057946.67000002,
     "restruct": 0.0,
@@ -1808,11 +1811,25 @@ const ageDistribution = {
   ],
   "2024-02": [
     {
-      "age_group": "51-55 th",
-      "debitur": 13218,
-      "portfolio": 2250314600535.29,
+      "age_group": "> 65 th",
+      "debitur": 24507,
+      "portfolio": 2423475776248.15,
       "period": "2024-02",
-      "avg_Porto": 170246224.8854055
+      "avg_Porto": 98889124.58677724
+    },
+    {
+      "age_group": "56-60 th",
+      "debitur": 29050,
+      "portfolio": 5665036029501.9,
+      "period": "2024-02",
+      "avg_Porto": 195009846.1102203
+    },
+    {
+      "age_group": "61-65 th",
+      "debitur": 41643,
+      "portfolio": 8268961805242.99,
+      "period": "2024-02",
+      "avg_Porto": 198567869.87592128
     },
     {
       "age_group": "46-50 th",
@@ -1829,25 +1846,11 @@ const ageDistribution = {
       "avg_Porto": 125322772.33468878
     },
     {
-      "age_group": "56-60 th",
-      "debitur": 29050,
-      "portfolio": 5665036029501.9,
+      "age_group": "51-55 th",
+      "debitur": 13218,
+      "portfolio": 2250314600535.29,
       "period": "2024-02",
-      "avg_Porto": 195009846.1102203
-    },
-    {
-      "age_group": "> 65 th",
-      "debitur": 24507,
-      "portfolio": 2423475776248.15,
-      "period": "2024-02",
-      "avg_Porto": 98889124.58677724
-    },
-    {
-      "age_group": "61-65 th",
-      "debitur": 41643,
-      "portfolio": 8268961805242.99,
-      "period": "2024-02",
-      "avg_Porto": 198567869.87592128
+      "avg_Porto": 170246224.8854055
     }
   ],
   "2024-03": [
@@ -1896,6 +1899,34 @@ const ageDistribution = {
   ],
   "2024-04": [
     {
+      "age_group": "61-65 th",
+      "debitur": 42538,
+      "portfolio": 8601329764467.95,
+      "period": "2024-04",
+      "avg_Porto": 202203436.09168157
+    },
+    {
+      "age_group": "> 65 th",
+      "debitur": 24819,
+      "portfolio": 2497997403704.33,
+      "period": "2024-04",
+      "avg_Porto": 100648591.95391957
+    },
+    {
+      "age_group": "56-60 th",
+      "debitur": 28919,
+      "portfolio": 5703283027396.28,
+      "period": "2024-04",
+      "avg_Porto": 197215776.04330304
+    },
+    {
+      "age_group": "46-50 th",
+      "debitur": 4313,
+      "portfolio": 641604992938.39,
+      "period": "2024-04",
+      "avg_Porto": 148760721.7571041
+    },
+    {
       "age_group": "40-45 th",
       "debitur": 1470,
       "portfolio": 186726359808.14,
@@ -1908,34 +1939,6 @@ const ageDistribution = {
       "portfolio": 2267635507025.01,
       "period": "2024-04",
       "avg_Porto": 171972964.282194
-    },
-    {
-      "age_group": "46-50 th",
-      "debitur": 4313,
-      "portfolio": 641604992938.39,
-      "period": "2024-04",
-      "avg_Porto": 148760721.7571041
-    },
-    {
-      "age_group": "> 65 th",
-      "debitur": 24819,
-      "portfolio": 2497997403704.33,
-      "period": "2024-04",
-      "avg_Porto": 100648591.95391957
-    },
-    {
-      "age_group": "61-65 th",
-      "debitur": 42538,
-      "portfolio": 8601329764467.95,
-      "period": "2024-04",
-      "avg_Porto": 202203436.09168157
-    },
-    {
-      "age_group": "56-60 th",
-      "debitur": 28919,
-      "portfolio": 5703283027396.28,
-      "period": "2024-04",
-      "avg_Porto": 197215776.04330304
     }
   ],
   "2024-05": [
@@ -2028,27 +2031,6 @@ const ageDistribution = {
   ],
   "2024-07": [
     {
-      "age_group": "40-45 th",
-      "debitur": 1445,
-      "portfolio": 185569672067.94,
-      "period": "2024-07",
-      "avg_Porto": 128421918.38611765
-    },
-    {
-      "age_group": "46-50 th",
-      "debitur": 4370,
-      "portfolio": 660090304040.2,
-      "period": "2024-07",
-      "avg_Porto": 151050412.82384437
-    },
-    {
-      "age_group": "51-55 th",
-      "debitur": 13032,
-      "portfolio": 2281009256292.39,
-      "period": "2024-07",
-      "avg_Porto": 175031403.95122698
-    },
-    {
       "age_group": "56-60 th",
       "debitur": 28785,
       "portfolio": 5797269465101.07,
@@ -2068,6 +2050,27 @@ const ageDistribution = {
       "portfolio": 2682503632018.11,
       "period": "2024-07",
       "avg_Porto": 104499557.14912777
+    },
+    {
+      "age_group": "40-45 th",
+      "debitur": 1445,
+      "portfolio": 185569672067.94,
+      "period": "2024-07",
+      "avg_Porto": 128421918.38611765
+    },
+    {
+      "age_group": "46-50 th",
+      "debitur": 4370,
+      "portfolio": 660090304040.2,
+      "period": "2024-07",
+      "avg_Porto": 151050412.82384437
+    },
+    {
+      "age_group": "51-55 th",
+      "debitur": 13032,
+      "portfolio": 2281009256292.39,
+      "period": "2024-07",
+      "avg_Porto": 175031403.95122698
     }
   ],
   "2024-08": [
@@ -2116,27 +2119,6 @@ const ageDistribution = {
   ],
   "2024-09": [
     {
-      "age_group": "51-55 th",
-      "debitur": 12927,
-      "portfolio": 2283934419015.93,
-      "period": "2024-09",
-      "avg_Porto": 176679385.70557207
-    },
-    {
-      "age_group": "46-50 th",
-      "debitur": 4393,
-      "portfolio": 670923780607.78,
-      "period": "2024-09",
-      "avg_Porto": 152725650.03591624
-    },
-    {
-      "age_group": "40-45 th",
-      "debitur": 1395,
-      "portfolio": 179024557718.81,
-      "period": "2024-09",
-      "avg_Porto": 128333016.2858853
-    },
-    {
       "age_group": "> 65 th",
       "debitur": 26228,
       "portfolio": 2834954631786.94,
@@ -2156,9 +2138,58 @@ const ageDistribution = {
       "portfolio": 5850559830599.52,
       "period": "2024-09",
       "avg_Porto": 202989377.2326528
+    },
+    {
+      "age_group": "40-45 th",
+      "debitur": 1395,
+      "portfolio": 179024557718.81,
+      "period": "2024-09",
+      "avg_Porto": 128333016.2858853
+    },
+    {
+      "age_group": "46-50 th",
+      "debitur": 4393,
+      "portfolio": 670923780607.78,
+      "period": "2024-09",
+      "avg_Porto": 152725650.03591624
+    },
+    {
+      "age_group": "51-55 th",
+      "debitur": 12927,
+      "portfolio": 2283934419015.93,
+      "period": "2024-09",
+      "avg_Porto": 176679385.70557207
     }
   ],
   "2024-10": [
+    {
+      "age_group": "61-65 th",
+      "debitur": 44337,
+      "portfolio": 9477338974969.87,
+      "period": "2024-10",
+      "avg_Porto": 213756884.20438614
+    },
+    {
+      "age_group": "> 65 th",
+      "debitur": 26329,
+      "portfolio": 2889005528899.44,
+      "period": "2024-10",
+      "avg_Porto": 109727127.08038436
+    },
+    {
+      "age_group": "56-60 th",
+      "debitur": 28891,
+      "portfolio": 5876493903845.85,
+      "period": "2024-10",
+      "avg_Porto": 203402232.66227716
+    },
+    {
+      "age_group": "46-50 th",
+      "debitur": 4419,
+      "portfolio": 678590135431.66,
+      "period": "2024-10",
+      "avg_Porto": 153561922.47831184
+    },
     {
       "age_group": "40-45 th",
       "debitur": 1393,
@@ -2172,34 +2203,6 @@ const ageDistribution = {
       "portfolio": 2311978052292.09,
       "period": "2024-10",
       "avg_Porto": 177926585.52347928
-    },
-    {
-      "age_group": "46-50 th",
-      "debitur": 4419,
-      "portfolio": 678590135431.66,
-      "period": "2024-10",
-      "avg_Porto": 153561922.47831184
-    },
-    {
-      "age_group": "> 65 th",
-      "debitur": 26329,
-      "portfolio": 2889005528899.44,
-      "period": "2024-10",
-      "avg_Porto": 109727127.08038436
-    },
-    {
-      "age_group": "61-65 th",
-      "debitur": 44337,
-      "portfolio": 9477338974969.87,
-      "period": "2024-10",
-      "avg_Porto": 213756884.20438614
-    },
-    {
-      "age_group": "56-60 th",
-      "debitur": 28891,
-      "portfolio": 5876493903845.85,
-      "period": "2024-10",
-      "avg_Porto": 203402232.66227716
     }
   ],
   "2024-11": [
@@ -2248,20 +2251,6 @@ const ageDistribution = {
   ],
   "2024-12": [
     {
-      "age_group": "61-65 th",
-      "debitur": 43927,
-      "portfolio": 9450803069783.9,
-      "period": "2024-12",
-      "avg_Porto": 215147928.83155918
-    },
-    {
-      "age_group": "40-45 th",
-      "debitur": 1368,
-      "portfolio": 176786020251.88,
-      "period": "2024-12",
-      "avg_Porto": 129229546.96774854
-    },
-    {
       "age_group": "46-50 th",
       "debitur": 4422,
       "portfolio": 680637004608.73,
@@ -2283,6 +2272,20 @@ const ageDistribution = {
       "avg_Porto": 202482086.3872768
     },
     {
+      "age_group": "61-65 th",
+      "debitur": 43927,
+      "portfolio": 9450803069783.9,
+      "period": "2024-12",
+      "avg_Porto": 215147928.83155918
+    },
+    {
+      "age_group": "40-45 th",
+      "debitur": 1368,
+      "portfolio": 176786020251.88,
+      "period": "2024-12",
+      "avg_Porto": 129229546.96774854
+    },
+    {
       "age_group": "> 65 th",
       "debitur": 26276,
       "portfolio": 2936450904042.1,
@@ -2291,6 +2294,34 @@ const ageDistribution = {
     }
   ],
   "2025-01": [
+    {
+      "age_group": "61-65 th",
+      "debitur": 43873,
+      "portfolio": 9451670070730.85,
+      "period": "2025-01",
+      "avg_Porto": 215432499.95967564
+    },
+    {
+      "age_group": "> 65 th",
+      "debitur": 26782,
+      "portfolio": 3021393484135.96,
+      "period": "2025-01",
+      "avg_Porto": 112814333.6620103
+    },
+    {
+      "age_group": "56-60 th",
+      "debitur": 27715,
+      "portfolio": 5572602547134.42,
+      "period": "2025-01",
+      "avg_Porto": 201068105.61553022
+    },
+    {
+      "age_group": "51-55 th",
+      "debitur": 12680,
+      "portfolio": 2265411129187.98,
+      "period": "2025-01",
+      "avg_Porto": 178660183.6899038
+    },
     {
       "age_group": "46-50 th",
       "debitur": 4380,
@@ -2304,34 +2335,6 @@ const ageDistribution = {
       "portfolio": 174896512789.25,
       "period": "2025-01",
       "avg_Porto": 128979729.19561209
-    },
-    {
-      "age_group": "51-55 th",
-      "debitur": 12680,
-      "portfolio": 2265411129187.98,
-      "period": "2025-01",
-      "avg_Porto": 178660183.6899038
-    },
-    {
-      "age_group": "56-60 th",
-      "debitur": 27715,
-      "portfolio": 5572602547134.42,
-      "period": "2025-01",
-      "avg_Porto": 201068105.61553022
-    },
-    {
-      "age_group": "> 65 th",
-      "debitur": 26782,
-      "portfolio": 3021393484135.96,
-      "period": "2025-01",
-      "avg_Porto": 112814333.6620103
-    },
-    {
-      "age_group": "61-65 th",
-      "debitur": 43873,
-      "portfolio": 9451670070730.85,
-      "period": "2025-01",
-      "avg_Porto": 215432499.95967564
     }
   ],
   "2025-02": [
@@ -2380,27 +2383,6 @@ const ageDistribution = {
   ],
   "2025-03": [
     {
-      "age_group": "51-55 th",
-      "debitur": 12461,
-      "portfolio": 2212188203975.36,
-      "period": "2025-03",
-      "avg_Porto": 177528946.63151914
-    },
-    {
-      "age_group": "46-50 th",
-      "debitur": 4387,
-      "portfolio": 674149965650.58,
-      "period": "2025-03",
-      "avg_Porto": 153669926.0657807
-    },
-    {
-      "age_group": "40-45 th",
-      "debitur": 1313,
-      "portfolio": 168763658620.72,
-      "period": "2025-03",
-      "avg_Porto": 128532870.2366489
-    },
-    {
       "age_group": "> 65 th",
       "debitur": 27121,
       "portfolio": 3098791256122.62,
@@ -2420,9 +2402,58 @@ const ageDistribution = {
       "portfolio": 5413351181201.65,
       "period": "2025-03",
       "avg_Porto": 199328049.97428566
+    },
+    {
+      "age_group": "40-45 th",
+      "debitur": 1313,
+      "portfolio": 168763658620.72,
+      "period": "2025-03",
+      "avg_Porto": 128532870.2366489
+    },
+    {
+      "age_group": "46-50 th",
+      "debitur": 4387,
+      "portfolio": 674149965650.58,
+      "period": "2025-03",
+      "avg_Porto": 153669926.0657807
+    },
+    {
+      "age_group": "51-55 th",
+      "debitur": 12461,
+      "portfolio": 2212188203975.36,
+      "period": "2025-03",
+      "avg_Porto": 177528946.63151914
     }
   ],
   "2025-04": [
+    {
+      "age_group": "61-65 th",
+      "debitur": 43870,
+      "portfolio": 9438696174665.38,
+      "period": "2025-04",
+      "avg_Porto": 215151497.0290718
+    },
+    {
+      "age_group": "> 65 th",
+      "debitur": 27408,
+      "portfolio": 3160907053193.01,
+      "period": "2025-04",
+      "avg_Porto": 115327898.90517403
+    },
+    {
+      "age_group": "56-60 th",
+      "debitur": 26829,
+      "portfolio": 5319914659273.08,
+      "period": "2025-04",
+      "avg_Porto": 198289711.1063804
+    },
+    {
+      "age_group": "51-55 th",
+      "debitur": 12325,
+      "portfolio": 2183958706600.96,
+      "period": "2025-04",
+      "avg_Porto": 177197460.9818223
+    },
     {
       "age_group": "46-50 th",
       "debitur": 4351,
@@ -2436,34 +2467,6 @@ const ageDistribution = {
       "portfolio": 164243421698.62,
       "period": "2025-04",
       "avg_Porto": 128114993.52466458
-    },
-    {
-      "age_group": "51-55 th",
-      "debitur": 12325,
-      "portfolio": 2183958706600.96,
-      "period": "2025-04",
-      "avg_Porto": 177197460.9818223
-    },
-    {
-      "age_group": "56-60 th",
-      "debitur": 26829,
-      "portfolio": 5319914659273.08,
-      "period": "2025-04",
-      "avg_Porto": 198289711.1063804
-    },
-    {
-      "age_group": "> 65 th",
-      "debitur": 27408,
-      "portfolio": 3160907053193.01,
-      "period": "2025-04",
-      "avg_Porto": 115327898.90517403
-    },
-    {
-      "age_group": "61-65 th",
-      "debitur": 43870,
-      "portfolio": 9438696174665.38,
-      "period": "2025-04",
-      "avg_Porto": 215151497.0290718
     }
   ],
   "2025-05": [
@@ -2556,25 +2559,11 @@ const ageDistribution = {
   ],
   "2025-07": [
     {
-      "age_group": "40-45 th",
-      "debitur": 1205,
-      "portfolio": 152894568835.71,
+      "age_group": "> 65 th",
+      "debitur": 28554,
+      "portfolio": 3383169955956.51,
       "period": "2025-07",
-      "avg_Porto": 126883459.61469708
-    },
-    {
-      "age_group": "46-50 th",
-      "debitur": 4219,
-      "portfolio": 648418402320.93,
-      "period": "2025-07",
-      "avg_Porto": 153690069.28678125
-    },
-    {
-      "age_group": "51-55 th",
-      "debitur": 11863,
-      "portfolio": 2098642443145.13,
-      "period": "2025-07",
-      "avg_Porto": 176906553.4135657
+      "avg_Porto": 118483223.22464487
     },
     {
       "age_group": "56-60 th",
@@ -2591,34 +2580,34 @@ const ageDistribution = {
       "avg_Porto": 215278261.03046626
     },
     {
-      "age_group": "> 65 th",
-      "debitur": 28554,
-      "portfolio": 3383169955956.51,
+      "age_group": "46-50 th",
+      "debitur": 4219,
+      "portfolio": 648418402320.93,
       "period": "2025-07",
-      "avg_Porto": 118483223.22464487
+      "avg_Porto": 153690069.28678125
+    },
+    {
+      "age_group": "51-55 th",
+      "debitur": 11863,
+      "portfolio": 2098642443145.13,
+      "period": "2025-07",
+      "avg_Porto": 176906553.4135657
+    },
+    {
+      "age_group": "40-45 th",
+      "debitur": 1205,
+      "portfolio": 152894568835.71,
+      "period": "2025-07",
+      "avg_Porto": 126883459.61469708
     }
   ],
   "2025-08": [
     {
-      "age_group": "40-45 th",
-      "debitur": 1172,
-      "portfolio": 148068804734.23,
+      "age_group": "61-65 th",
+      "debitur": 43532,
+      "portfolio": 9372017514117.79,
       "period": "2025-08",
-      "avg_Porto": 126338570.59234643
-    },
-    {
-      "age_group": "46-50 th",
-      "debitur": 4162,
-      "portfolio": 639445752554.53,
-      "period": "2025-08",
-      "avg_Porto": 153639056.35620615
-    },
-    {
-      "age_group": "51-55 th",
-      "debitur": 11730,
-      "portfolio": 2076011077029.68,
-      "period": "2025-08",
-      "avg_Porto": 176983041.5200068
+      "avg_Porto": 215290304.00895408
     },
     {
       "age_group": "56-60 th",
@@ -2628,18 +2617,32 @@ const ageDistribution = {
       "avg_Porto": 193515644.50253034
     },
     {
-      "age_group": "61-65 th",
-      "debitur": 43532,
-      "portfolio": 9372017514117.79,
-      "period": "2025-08",
-      "avg_Porto": 215290304.00895408
-    },
-    {
       "age_group": "> 65 th",
       "debitur": 28969,
       "portfolio": 3468325933138.52,
       "period": "2025-08",
       "avg_Porto": 119725428.32470986
+    },
+    {
+      "age_group": "46-50 th",
+      "debitur": 4162,
+      "portfolio": 639445752554.53,
+      "period": "2025-08",
+      "avg_Porto": 153639056.35620615
+    },
+    {
+      "age_group": "40-45 th",
+      "debitur": 1172,
+      "portfolio": 148068804734.23,
+      "period": "2025-08",
+      "avg_Porto": 126338570.59234643
+    },
+    {
+      "age_group": "51-55 th",
+      "debitur": 11730,
+      "portfolio": 2076011077029.68,
+      "period": "2025-08",
+      "avg_Porto": 176983041.5200068
     }
   ],
   "2025-09": [
@@ -2688,11 +2691,25 @@ const ageDistribution = {
   ],
   "2025-10": [
     {
-      "age_group": "51-55 th",
-      "debitur": 11414,
-      "portfolio": 2013805595549.35,
+      "age_group": "> 65 th",
+      "debitur": 29261,
+      "portfolio": 3576362170660.27,
       "period": "2025-10",
-      "avg_Porto": 176432941.6111223
+      "avg_Porto": 122222828.01887393
+    },
+    {
+      "age_group": "56-60 th",
+      "debitur": 25006,
+      "portfolio": 4799574128025.68,
+      "period": "2025-10",
+      "avg_Porto": 191936900.2649636
+    },
+    {
+      "age_group": "61-65 th",
+      "debitur": 42821,
+      "portfolio": 9199667680243.53,
+      "period": "2025-10",
+      "avg_Porto": 214840094.35191914
     },
     {
       "age_group": "46-50 th",
@@ -2709,25 +2726,11 @@ const ageDistribution = {
       "avg_Porto": 126611116.39053057
     },
     {
-      "age_group": "56-60 th",
-      "debitur": 25006,
-      "portfolio": 4799574128025.68,
+      "age_group": "51-55 th",
+      "debitur": 11414,
+      "portfolio": 2013805595549.35,
       "period": "2025-10",
-      "avg_Porto": 191936900.2649636
-    },
-    {
-      "age_group": "> 65 th",
-      "debitur": 29261,
-      "portfolio": 3576362170660.27,
-      "period": "2025-10",
-      "avg_Porto": 122222828.01887393
-    },
-    {
-      "age_group": "61-65 th",
-      "debitur": 42821,
-      "portfolio": 9199667680243.53,
-      "period": "2025-10",
-      "avg_Porto": 214840094.35191914
+      "avg_Porto": 176432941.6111223
     }
   ],
   "2025-11": [
@@ -2776,32 +2779,18 @@ const ageDistribution = {
   ],
   "2025-12": [
     {
-      "age_group": "40-45 th",
-      "debitur": 1051,
-      "portfolio": 131024964299.53,
-      "period": "2025-12",
-      "avg_Porto": 124666949.85683158
-    },
-    {
-      "age_group": "46-50 th",
-      "debitur": 3972,
-      "portfolio": 599216247693.34,
-      "period": "2025-12",
-      "avg_Porto": 150860082.50084087
-    },
-    {
-      "age_group": "51-55 th",
-      "debitur": 11066,
-      "portfolio": 1942136767218.36,
-      "period": "2025-12",
-      "avg_Porto": 175504858.77628413
-    },
-    {
       "age_group": "56-60 th",
       "debitur": 24405,
       "portfolio": 4639069721036.17,
       "period": "2025-12",
       "avg_Porto": 190086856.01459414
+    },
+    {
+      "age_group": "> 65 th",
+      "debitur": 29312,
+      "portfolio": 3632411957157.86,
+      "period": "2025-12",
+      "avg_Porto": 123922351.15849686
     },
     {
       "age_group": "61-65 th",
@@ -2811,14 +2800,35 @@ const ageDistribution = {
       "avg_Porto": 214167696.3620282
     },
     {
-      "age_group": "> 65 th",
-      "debitur": 29312,
-      "portfolio": 3632411957157.86,
+      "age_group": "40-45 th",
+      "debitur": 1051,
+      "portfolio": 131024964299.53,
       "period": "2025-12",
-      "avg_Porto": 123922351.15849686
+      "avg_Porto": 124666949.85683158
+    },
+    {
+      "age_group": "51-55 th",
+      "debitur": 11066,
+      "portfolio": 1942136767218.36,
+      "period": "2025-12",
+      "avg_Porto": 175504858.77628413
+    },
+    {
+      "age_group": "46-50 th",
+      "debitur": 3972,
+      "portfolio": 599216247693.34,
+      "period": "2025-12",
+      "avg_Porto": 150860082.50084087
     }
   ],
   "2026-01": [
+    {
+      "age_group": "61-65 th",
+      "debitur": 41669,
+      "portfolio": 8914946719191.63,
+      "period": "2026-01",
+      "avg_Porto": 213946740.24314553
+    },
     {
       "age_group": "40-45 th",
       "debitur": 1020,
@@ -2846,13 +2856,6 @@ const ageDistribution = {
       "portfolio": 4566805132228.47,
       "period": "2026-01",
       "avg_Porto": 189070345.79069594
-    },
-    {
-      "age_group": "61-65 th",
-      "debitur": 41669,
-      "portfolio": 8914946719191.63,
-      "period": "2026-01",
-      "avg_Porto": 213946740.24314553
     },
     {
       "age_group": "> 65 th",
