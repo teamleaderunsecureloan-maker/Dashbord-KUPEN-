@@ -623,6 +623,136 @@ grid-template-columns: 1fr;
         border-bottom: 1px solid #e2e8f0;
     }
 }
+/* ========================================================================== */
+/* PORTFOLIO ANALYSIS TABLE - ADDED BY INTEGRATION */
+/* ========================================================================== */
+
+.portfolio-analysis-section {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 24px;
+}
+
+.portfolio-analysis-section h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.portfolio-analysis-table-wrapper {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+
+.portfolio-analysis-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.portfolio-analysis-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.portfolio-analysis-table th {
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.portfolio-analysis-table th:first-child {
+    border-top-left-radius: 8px;
+    padding-left: 20px;
+}
+
+.portfolio-analysis-table th:last-child {
+    border-top-right-radius: 8px;
+}
+
+.portfolio-analysis-table tbody tr {
+    border-bottom: 1px solid #e2e8f0;
+    transition: background-color 0.2s;
+}
+
+.portfolio-analysis-table tbody tr:hover {
+    background-color: #f7fafc;
+}
+
+.portfolio-analysis-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.portfolio-analysis-table td {
+    padding: 14px 16px;
+    color: #2d3748;
+}
+
+.portfolio-analysis-table td:first-child {
+    font-weight: 600;
+    color: #4a5568;
+    padding-left: 20px;
+}
+
+.portfolio-analysis-table .number-cell {
+    text-align: right;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+}
+
+/* Color coding for rows */
+.portfolio-analysis-table .row-outstanding {
+    background-color: #ebf8ff;
+}
+
+.portfolio-analysis-table .row-booking {
+    background-color: #fefcbf;
+}
+
+.portfolio-analysis-table .row-relending {
+    background-color: #f0fff4;
+}
+
+.portfolio-analysis-table .row-growth {
+    background-color: #fed7d7;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .portfolio-analysis-table {
+        font-size: 11px;
+    }
+    
+    .portfolio-analysis-table th,
+    .portfolio-analysis-table td {
+        padding: 10px 8px;
+    }
+    
+    .portfolio-analysis-table th:first-child,
+    .portfolio-analysis-table td:first-child {
+        padding-left: 12px;
+    }
+}
+
+/* Period column header center alignment */
+.portfolio-analysis-table th.period-header {
+    text-align: center;
+}
+
+.portfolio-analysis-table td.period-cell {
+    text-align: center;
+    font-weight: 500;
+}
 </style>
 </head>
 <body>
@@ -967,6 +1097,32 @@ function checkPassword() {
 <div class="kpi-footnote">Total CKPN pada COA Kupen dibandingkan dengan total portofolio NPL Kupen.</div>
 </div>
 </div>
+<!-- ========================================================================== -->
+    <!-- PORTFOLIO ANALYSIS TABLE - ADDED BY INTEGRATION -->
+    <!-- ========================================================================== -->
+    <div class="portfolio-analysis-section">
+        <h2>
+            <span>📊</span>
+            Portfolio Analysis
+        </h2>
+        
+        <div class="portfolio-analysis-table-wrapper">
+            <table class="portfolio-analysis-table">
+                <thead>
+                    <tr>
+                        <th>Remarks</th>
+                        <!-- Period columns will be dynamically inserted here -->
+                    </tr>
+                </thead>
+                <tbody id="portfolioAnalysisTableBody">
+                    <!-- Table rows will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- ========================================================================== -->
+    <!-- END OF PORTFOLIO ANALYSIS TABLE -->
+    <!-- ========================================================================== -->
 
 <div class="growth-section">
 <div class="section-card">
@@ -4648,6 +4804,11 @@ const productData = [
     "Period": "2024-01"
   }
 ];
+// ========================================================================
+// PORTFOLIO ANALYSIS DATA - ADDED BY INTEGRATION
+// ========================================================================
+// This will be automatically populated by Step 2C Updated script
+const portfolioAnalysisData = [];
 
 let charts = {};
 
@@ -5495,6 +5656,120 @@ const pasawayPct = ((lost.passaway / lost.lost_portfolio) * 100).toFixed(1);
 const impact = `Total lost portfolio ${formatCurrency(lost.lost_portfolio)} (${lost.lost_count} loan) dengan direct cost impact ${formatCurrency(lost.direct_cost)}`;
 document.getElementById('financialImpact').textContent = impact;
 }
+// ========================================================================
+// PORTFOLIO ANALYSIS FUNCTIONS - ADDED BY INTEGRATION
+// ========================================================================
+
+function formatCurrencyPortfolio(value) {
+    // Format number dengan separator ribuan tanpa desimal
+    return new Intl.NumberFormat('id-ID').format(Math.round(value));
+}
+
+function formatMonthPortfolio(period) {
+    // Convert "2025-07" to "Juli 2025"
+    const monthNames = {
+        '01': 'Januari', '02': 'Februari', '03': 'Maret',
+        '04': 'April', '05': 'Mei', '06': 'Juni',
+        '07': 'Juli', '08': 'Agustus', '09': 'September',
+        '10': 'Oktober', '11': 'November', '12': 'Desember'
+    };
+    
+    const [year, month] = period.split('-');
+    return `${monthNames[month]} ${year}`;
+}
+
+function renderPortfolioAnalysisTable() {
+    // Get the table elements
+    const thead = document.querySelector('.portfolio-analysis-table thead tr');
+    const tbody = document.getElementById('portfolioAnalysisTableBody');
+    
+    if (!portfolioAnalysisData || portfolioAnalysisData.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="100%" style="text-align: center; padding: 24px; color: #718096;">No data available</td></tr>';
+        return;
+    }
+    
+    // Sort by period descending (newest first) and take last 6 months
+    const sortedData = [...portfolioAnalysisData]
+        .sort((a, b) => b.period.localeCompare(a.period))
+        .slice(0, 6)
+        .reverse(); // Reverse to show oldest to newest (left to right)
+    
+    // Clear existing headers (except first "Remarks" column)
+    thead.innerHTML = '<th>Remarks</th>';
+    
+    // Add period headers
+    sortedData.forEach(item => {
+        const th = document.createElement('th');
+        th.className = 'period-header';
+        th.textContent = formatMonthPortfolio(item.period);
+        thead.appendChild(th);
+    });
+    
+    // Define rows
+    const rows = [
+        { 
+            label: 'Outstanding', 
+            key: 'outstanding', 
+            className: 'row-outstanding',
+            tooltip: 'Portfolio bulan berjalan'
+        },
+        { 
+            label: 'Booking', 
+            key: 'booking', 
+            className: 'row-booking',
+            tooltip: 'New Disburse bulan berjalan'
+        },
+        { 
+            label: 'Relending', 
+            key: 'relending', 
+            className: 'row-relending',
+            tooltip: 'Booking - Growth (untuk maintain portfolio)'
+        },
+        { 
+            label: 'Growth', 
+            key: 'growth', 
+            className: 'row-growth',
+            tooltip: 'Portfolio bulan ini - Portfolio bulan sebelumnya'
+        }
+    ];
+    
+    // Clear tbody
+    tbody.innerHTML = '';
+    
+    // Create rows
+    rows.forEach(row => {
+        const tr = document.createElement('tr');
+        tr.className = row.className;
+        
+        // First column: Label
+        const tdLabel = document.createElement('td');
+        tdLabel.textContent = row.label;
+        tdLabel.title = row.tooltip;
+        tr.appendChild(tdLabel);
+        
+        // Data columns
+        sortedData.forEach(item => {
+            const td = document.createElement('td');
+            td.className = 'number-cell period-cell';
+            const value = item[row.key];
+            td.textContent = formatCurrencyPortfolio(value);
+            
+            // Add color for positive/negative values
+            if (row.key === 'growth') {
+                if (value > 0) {
+                    td.style.color = '#22c55e'; // Green for positive
+                } else if (value < 0) {
+                    td.style.color = '#ef4444'; // Red for negative
+                }
+            }
+            
+            tr.appendChild(td);
+        });
+        
+        tbody.appendChild(tr);
+    });
+}
+
 function updateAllCharts(period, prevPeriod, current, previous) {
 updateSparklines(period);
 updateDisburseChart(period, prevPeriod, current, previous);
@@ -5504,6 +5779,7 @@ updateAgeChart(period);
 updateQualityChart(period);
 updateWaterfallChart(period);
 updateLostBreakdown(period);
+renderPortfolioAnalysisTable();  // Portfolio Analysis Table
 }
 
 // ========================================
