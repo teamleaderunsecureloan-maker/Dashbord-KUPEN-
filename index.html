@@ -12,9 +12,9 @@ DASHBOARD AUTO-UPDATE
 Last Updated: 2026-02-03 09:17:56 (Jakarta Time)
 Latest Period: 2026-02
 Total Periods: 26
-Updated by: KUPEN Dashboard Auto-Update Script (Step 2C - With Portfolio Analysis)
+Updated by: KUPEN Dashboard Auto-Update Script (Step 2C - With Outstanding Analysis)
 Data Source: Google Drive (/content/drive/My Drive/KUPEN_Dashboard_Data/)
-New Feature: Portfolio Analysis Table (Outstanding, Disburse, Relending, Booking, Growth)
+New Feature: Outstanding Analysis Table (Outstanding, Disburse, Relending, Disburse, Growth)
 ==============================================================================
 -->
 
@@ -36,7 +36,7 @@ Data Source: Google Drive (/content/drive/My Drive/KUPEN_Dashboard_Data/)
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dashboard Portofolio KUPEN</title>
+<title>Dashboard Outstanding KUPEN</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
@@ -126,7 +126,7 @@ width: 100%;
 height: 4px;
 }
 
-.kpi-card.portfolio::before { background: #3b82f6; }
+.kpi-card.Outstanding::before { background: #3b82f6; }
 .kpi-card.npl::before { background: #ef4444; }
 .kpi-card.sm::before { background: #f59e0b; }
 .kpi-card.coverage::before { background: #10b981; }
@@ -145,7 +145,7 @@ margin-bottom: 8px;
 line-height: 1.2;
 }
 
-.kpi-card.portfolio .kpi-value { color: #3b82f6; }
+.kpi-card.Outstanding .kpi-value { color: #3b82f6; }
 .kpi-card.npl .kpi-value { color: #ef4444; }
 .kpi-card.sm .kpi-value { color: #f59e0b; }
 .kpi-card.coverage .kpi-value { color: #10b981; }
@@ -629,10 +629,10 @@ grid-template-columns: 1fr;
     }
 }
 /* ========================================================================== */
-/* PORTFOLIO ANALYSIS TABLE - ADDED BY INTEGRATION */
+/* OUTSTANDING ANALYSIS TABLE - ADDED BY INTEGRATION */
 /* ========================================================================== */
 
-.portfolio-analysis-section {
+.Outstanding-analysis-section {
     background: white;
     border-radius: 12px;
     padding: 24px;
@@ -640,7 +640,7 @@ grid-template-columns: 1fr;
     margin-bottom: 24px;
 }
 
-.portfolio-analysis-section h2 {
+.Outstanding-analysis-section h2 {
     font-size: 20px;
     font-weight: 600;
     color: #1a202c;
@@ -650,24 +650,24 @@ grid-template-columns: 1fr;
     gap: 8px;
 }
 
-.portfolio-analysis-table-wrapper {
+.Outstanding-analysis-table-wrapper {
     overflow-x: auto;
     border-radius: 8px;
     border: 1px solid #e2e8f0;
 }
 
-.portfolio-analysis-table {
+.Outstanding-analysis-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 13px;
 }
 
-.portfolio-analysis-table thead {
+.Outstanding-analysis-table thead {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
 }
 
-.portfolio-analysis-table th {
+.Outstanding-analysis-table th {
     padding: 12px 16px;
     text-align: left;
     font-weight: 600;
@@ -676,84 +676,84 @@ grid-template-columns: 1fr;
     letter-spacing: 0.5px;
 }
 
-.portfolio-analysis-table th:first-child {
+.Outstanding-analysis-table th:first-child {
     border-top-left-radius: 8px;
     padding-left: 20px;
 }
 
-.portfolio-analysis-table th:last-child {
+.Outstanding-analysis-table th:last-child {
     border-top-right-radius: 8px;
 }
 
-.portfolio-analysis-table tbody tr {
+.Outstanding-analysis-table tbody tr {
     border-bottom: 1px solid #e2e8f0;
     transition: background-color 0.2s;
 }
 
-.portfolio-analysis-table tbody tr:hover {
+.Outstanding-analysis-table tbody tr:hover {
     background-color: #f7fafc;
 }
 
-.portfolio-analysis-table tbody tr:last-child {
+.Outstanding-analysis-table tbody tr:last-child {
     border-bottom: none;
 }
 
-.portfolio-analysis-table td {
+.Outstanding-analysis-table td {
     padding: 14px 16px;
     color: #2d3748;
 }
 
-.portfolio-analysis-table td:first-child {
+.Outstanding-analysis-table td:first-child {
     font-weight: 600;
     color: #4a5568;
     padding-left: 20px;
 }
 
-.portfolio-analysis-table .number-cell {
+.Outstanding-analysis-table .number-cell {
     text-align: right;
     font-size: 13px;
     font-weight: 500;
 }
 /* Color coding for rows */
-.portfolio-analysis-table .row-outstanding {
+.Outstanding-analysis-table .row-outstanding {
     background-color: #ebf8ff;
 }
 
-.portfolio-analysis-table .row-booking {
+.Outstanding-analysis-table .row-Disburse {
     background-color: #fefcbf;
 }
 
-.portfolio-analysis-table .row-relending {
+.Outstanding-analysis-table .row-relending {
     background-color: #f0fff4;
 }
 
-.portfolio-analysis-table .row-growth {
+.Outstanding-analysis-table .row-growth {
     background-color: #fed7d7;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-    .portfolio-analysis-table {
+    .Outstanding-analysis-table {
         font-size: 11px;
     }
     
-    .portfolio-analysis-table th,
-    .portfolio-analysis-table td {
+    .Outstanding-analysis-table th,
+    .Outstanding-analysis-table td {
         padding: 10px 8px;
     }
     
-    .portfolio-analysis-table th:first-child,
-    .portfolio-analysis-table td:first-child {
+    .Outstanding-analysis-table th:first-child,
+    .Outstanding-analysis-table td:first-child {
         padding-left: 12px;
     }
 }
 
 /* Period column header center alignment */
-.portfolio-analysis-table th.period-header {
+.Outstanding-analysis-table th.period-header {
     text-align: center;
 }
 
-.portfolio-analysis-table td.period-cell {
+.Outstanding-analysis-table td.period-cell {
     text-align: center;
     font-weight: 500;
 }
@@ -1046,7 +1046,7 @@ function checkPassword() {
 
 <div class="dashboard-container">
 <div class="header">
-<h1>📊 Dashboard Portofolio KUPEN</h1>
+<h1>📊 Dashboard Outstanding KUPEN</h1>
 
 <!-- KATA PENGANTAR - BAGIAN BARU -->
 <div class="pengantar-section">
@@ -1056,26 +1056,26 @@ function checkPassword() {
     </button>
     <div class="pengantar-content" id="pengantarContent">
         <p class="pengantar-intro">
-            Data Portofolio Kredit Pensiun (Kupen) dihitung berdasarkan data MD 6400 pada setiap akhir bulan berjalan, 
+            Data Outstanding Kredit Pensiun (Kupen) dihitung berdasarkan data MD 6400 pada setiap akhir bulan berjalan, 
             dengan metode perhitungan yang disusun berdasarkan perspektif bisnis pensiun.
         </p>
         <p class="pengantar-subtitle">Adapun beberapa definisi dan metode perhitungan utama yang perlu menjadi perhatian adalah sebagai berikut:</p>
         <div class="pengantar-list">
             <div class="pengantar-item">
-                <span class="pengantar-label">a. Portofolio</span>
-                <span class="pengantar-text">Merupakan seluruh kredit pensiun yang tercatat pada COA Kupen, dihitung berdasarkan standar PSAK, serta termasuk portofolio JF Bukopin.</span>
+                <span class="pengantar-label">a. Outstanding</span>
+                <span class="pengantar-text">Merupakan seluruh kredit pensiun yang tercatat pada COA Kupen, dihitung berdasarkan standar PSAK, serta termasuk Outstanding JF Bukopin.</span>
             </div>
             <div class="pengantar-item">
                 <span class="pengantar-label">b. Special Mention (SM)</span>
-                <span class="pengantar-text">Dihitung dari total Portofolio Kupen dengan melakukan penyaringan data pada debitur yang memiliki nilai Asset Soundness One Obligor = 2.</span>
+                <span class="pengantar-text">Dihitung dari total Outstanding Kupen dengan melakukan penyaringan data pada debitur yang memiliki nilai Asset Soundness One Obligor = 2.</span>
             </div>
             <div class="pengantar-item">
                 <span class="pengantar-label">c. Non-Performing Loan (NPL)</span>
-                <span class="pengantar-text">Dihitung dari total Portofolio Kupen dengan melakukan penyaringan data pada debitur yang memiliki nilai Asset Soundness One Obligor > 2.</span>
+                <span class="pengantar-text">Dihitung dari total Outstanding Kupen dengan melakukan penyaringan data pada debitur yang memiliki nilai Asset Soundness One Obligor > 2.</span>
             </div>
             <div class="pengantar-item">
                 <span class="pengantar-label">d. CKPN</span>
-                <span class="pengantar-text">Mengacu pada nilai CKPN yang tercatat pada kolom CKPN di Total Portofolio Kupen.</span>
+                <span class="pengantar-text">Mengacu pada nilai CKPN yang tercatat pada kolom CKPN di Total Outstanding Kupen.</span>
             </div>
             <div class="pengantar-item">
                 <span class="pengantar-label">e. Disbursement</span>
@@ -1083,7 +1083,7 @@ function checkPassword() {
             </div>
             <div class="pengantar-item">
                 <span class="pengantar-label">f. Interest Income</span>
-                <span class="pengantar-text">Dihitung dari kolom Scheduled Next Repayment Interest pada Total Portofolio Kupen, dengan ketentuan hanya mencakup debitur dengan Asset Soundness One Obligor = 1 dan 2.</span>
+                <span class="pengantar-text">Dihitung dari kolom Scheduled Next Repayment Interest pada Total Outstanding Kupen, dengan ketentuan hanya mencakup debitur dengan Asset Soundness One Obligor = 1 dan 2.</span>
             </div>
         </div>
     </div>
@@ -1128,12 +1128,12 @@ function checkPassword() {
 </div>
 
 <div class="executive-summary">
-<div class="kpi-card portfolio">
-<div class="kpi-label">Total Portfolio KUPEN</div>
-<div class="kpi-value" id="totalPortfolio">-</div>
-<div class="kpi-change" id="portfolioChange"></div>
+<div class="kpi-card Outstanding">
+<div class="kpi-label">Total Outstanding KUPEN</div>
+<div class="kpi-value" id="totalOutstanding">-</div>
+<div class="kpi-change" id="OutstandingChange"></div>
 <canvas id="miniChart1" class="mini-chart"></canvas>
-<div class="kpi-footnote">Seluruh portofolio Kredit Pensiun (Kupen), termasuk JF Bukopin, yang dihitung berdasarkan Balance + DOCF.</div>
+<div class="kpi-footnote">Seluruh Outstanding Kredit Pensiun (Kupen), termasuk JF Bukopin, yang dihitung berdasarkan Balance + DOCF.</div>
 </div>
 
 <div class="kpi-card npl">
@@ -1141,7 +1141,7 @@ function checkPassword() {
 <div class="kpi-value" id="nplRatio">-</div>
 <div class="kpi-change" id="nplChange"></div>
 <canvas id="miniChart2" class="mini-chart"></canvas>
-<div class="kpi-footnote">Total portofolio Kupen dengan kolektibilitas 3-5 (one obligor) dibandingkan dengan total portofolio Kupen.</div>
+<div class="kpi-footnote">Total Outstanding Kupen dengan kolektibilitas 3-5 (one obligor) dibandingkan dengan total Outstanding Kupen.</div>
 </div>
 
 <div class="kpi-card sm">
@@ -1149,7 +1149,7 @@ function checkPassword() {
 <div class="kpi-value" id="smRatio">-</div>
 <div class="kpi-change" id="smChange"></div>
 <canvas id="miniChart3" class="mini-chart"></canvas>
-<div class="kpi-footnote">Total portofolio Kupen dengan kolektibilitas 2 (one obligor) dibandingkan dengan total portofolio Kupen.</div>
+<div class="kpi-footnote">Total Outstanding Kupen dengan kolektibilitas 2 (one obligor) dibandingkan dengan total Outstanding Kupen.</div>
 </div>
 
 <div class="kpi-card coverage">
@@ -1157,36 +1157,36 @@ function checkPassword() {
 <div class="kpi-value" id="coverageRatio">-</div>
 <div class="kpi-change" id="coverageChange"></div>
 <canvas id="miniChart4" class="mini-chart"></canvas>
-<div class="kpi-footnote">Total CKPN pada COA Kupen dibandingkan dengan total portofolio NPL Kupen.</div>
+<div class="kpi-footnote">Total CKPN pada COA Kupen dibandingkan dengan total Outstanding NPL Kupen.</div>
 </div>
 </div>
 <!-- ========================================================================== -->
-    <!-- PORTFOLIO ANALYSIS TABLE - ADDED BY INTEGRATION -->
+    <!-- OUTSTANDING ANALYSIS TABLE - ADDED BY INTEGRATION -->
     <!-- ========================================================================== -->
-    <div class="portfolio-analysis-section">
+    <div class="Outstanding-analysis-section">
 <div class="section-title-row">
             <h2>
                 <span>📊</span>
-                Portfolio Analysis
+                Outstanding Analysis
             </h2>
-            <button class="btn-download-excel" onclick="downloadPortfolioAnalysis()">⬇ Excel</button>
+            <button class="btn-download-excel" onclick="downloadOutstandingAnalysis()">⬇ Excel</button>
         </div>        
-        <div class="portfolio-analysis-table-wrapper">
-            <table class="portfolio-analysis-table">
+        <div class="Outstanding-analysis-table-wrapper">
+            <table class="Outstanding-analysis-table">
                 <thead>
                     <tr>
                         <th>Remarks</th>
                         <!-- Period columns will be dynamically inserted here -->
                     </tr>
                 </thead>
-                <tbody id="portfolioAnalysisTableBody">
+                <tbody id="OutstandingAnalysisTableBody">
                     <!-- Table rows will be dynamically inserted here -->
                 </tbody>
             </table>
         </div>
     </div>
     <!-- ========================================================================== -->
-    <!-- END OF PORTFOLIO ANALYSIS TABLE -->
+    <!-- END OF OUTSTANDING ANALYSIS TABLE -->
     <!-- ========================================================================== -->
 
 <div class="growth-section">
@@ -1241,7 +1241,7 @@ Loading...
 <tr>
 <th>Kelompok Usia</th>
 <th>Jumlah Debitur</th>
-<th>Portfolio</th>
+<th>Outstanding</th>
 <th>Avg Porto</th>
 </tr>
 </thead>
@@ -1252,8 +1252,8 @@ Loading...
 
 <div class="section-card">
 <div class="section-title-row">
-    <div class="section-title">📈 Portfolio Quality Trend</div>
-    <button class="btn-download-excel" onclick="downloadPortfolioQuality()">⬇ Excel</button>
+    <div class="section-title">📈 Outstanding Quality Trend</div>
+    <button class="btn-download-excel" onclick="downloadOutstandingQuality()">⬇ Excel</button>
 </div>
 <div class="chart-container">
 <canvas id="qualityChart"></canvas>
@@ -1275,18 +1275,18 @@ Loading...
 
 <div class="movement-section">
 <div class="section-title-row">
-    <div class="section-title">🔄 Portfolio Movement & Lost Analysis</div>
+    <div class="section-title">🔄 Outstanding Movement & Lost Analysis</div>
     <button class="btn-download-excel" onclick="downloadMovementLost()">⬇ Excel</button>
 </div>
 <div class="chart-container">
 <canvas id="waterfallChart"></canvas>
 </div>
 
-<div class="section-title" style="margin-top: 30px;">📊 Lost Portfolio Breakdown</div>
+<div class="section-title" style="margin-top: 30px;">📊 Lost Outstanding Breakdown</div>
 <div class="lost-breakdown" id="lostBreakdown"></div>
 
 <div class="highlight-box" style="margin-top: 20px;">
-<h4>💼 Financial Impact dari Lost Portfolio</h4>
+<h4>💼 Financial Impact dari Lost Outstanding</h4>
 <p id="financialImpact">Loading...</p>
 </div>
 </div>
@@ -1296,7 +1296,7 @@ Loading...
 const summaryData = [
   {
     "period": "2026-02",
-    "portfolio": 19818279888316.06,
+    "Outstanding": 19818279888316.06,
     "balance": 18361473178574.832,
     "docf": 1456806709741.23,
     "interest_income": 162419919124.56003,
@@ -1312,7 +1312,7 @@ const summaryData = [
   },
   {
     "period": "2026-01",
-    "portfolio": 19826117128642.918,
+    "Outstanding": 19826117128642.918,
     "balance": 18368048474391.785,
     "docf": 1458068654251.13,
     "interest_income": 162508711223.78998,
@@ -1328,7 +1328,7 @@ const summaryData = [
   },
   {
     "period": "2025-12",
-    "portfolio": 19955393817230.312,
+    "Outstanding": 19955393817230.312,
     "balance": 18476099687694.047,
     "docf": 1479294129536.27,
     "interest_income": 163470229761.57004,
@@ -1344,7 +1344,7 @@ const summaryData = [
   },
   {
     "period": "2025-11",
-    "portfolio": 20138659229166.46,
+    "Outstanding": 20138659229166.46,
     "balance": 18631953716895.027,
     "docf": 1506705512271.4297,
     "interest_income": 165025188558.68,
@@ -1360,7 +1360,7 @@ const summaryData = [
   },
   {
     "period": "2025-10",
-    "portfolio": 20352694166392.293,
+    "Outstanding": 20352694166392.293,
     "balance": 18817044652856.81,
     "docf": 1535649513535.4802,
     "interest_income": 166475771307.63,
@@ -1376,7 +1376,7 @@ const summaryData = [
   },
   {
     "period": "2025-09",
-    "portfolio": 20518923923721.4,
+    "Outstanding": 20518923923721.4,
     "balance": 18952550330747.582,
     "docf": 1566373592973.82,
     "interest_income": 167357339436.68997,
@@ -1392,7 +1392,7 @@ const summaryData = [
   },
   {
     "period": "2025-08",
-    "portfolio": 20651290048926.438,
+    "Outstanding": 20651290048926.438,
     "balance": 19059494148766.9,
     "docf": 1591795900159.5403,
     "interest_income": 168594017003.91,
@@ -1408,7 +1408,7 @@ const summaryData = [
   },
   {
     "period": "2025-07",
-    "portfolio": 20723863469998.312,
+    "Outstanding": 20723863469998.312,
     "balance": 19108672883670.316,
     "docf": 1615190586327.9902,
     "interest_income": 168985611069.29996,
@@ -1424,7 +1424,7 @@ const summaryData = [
   },
   {
     "period": "2025-06",
-    "portfolio": 20806884549138.664,
+    "Outstanding": 20806884549138.664,
     "balance": 19167669424025.1,
     "docf": 1639215125113.5598,
     "interest_income": 169777197413.36002,
@@ -1440,7 +1440,7 @@ const summaryData = [
   },
   {
     "period": "2025-05",
-    "portfolio": 20869272851269.816,
+    "Outstanding": 20869272851269.816,
     "balance": 19207487948462.113,
     "docf": 1661784902807.7,
     "interest_income": 170843235635.87997,
@@ -1456,7 +1456,7 @@ const summaryData = [
   },
   {
     "period": "2025-04",
-    "portfolio": 20934918656177.934,
+    "Outstanding": 20934918656177.934,
     "balance": 19248878324720.547,
     "docf": 1686040331457.3801,
     "interest_income": 171178114041.12994,
@@ -1472,7 +1472,7 @@ const summaryData = [
   },
   {
     "period": "2025-03",
-    "portfolio": 21009080930672.426,
+    "Outstanding": 21009080930672.426,
     "balance": 19300689930938.81,
     "docf": 1708390999733.6199,
     "interest_income": 172128190863.84998,
@@ -1488,7 +1488,7 @@ const summaryData = [
   },
   {
     "period": "2025-02",
-    "portfolio": 21075901611301.05,
+    "Outstanding": 21075901611301.05,
     "balance": 19341560300413.19,
     "docf": 1734341310887.86,
     "interest_income": 172607845659.51,
@@ -1504,7 +1504,7 @@ const summaryData = [
   },
   {
     "period": "2025-01",
-    "portfolio": 21160011363928.906,
+    "Outstanding": 21160011363928.906,
     "balance": 19405346272163.188,
     "docf": 1754665091765.72,
     "interest_income": 173245842571.34006,
@@ -1520,7 +1520,7 @@ const summaryData = [
   },
   {
     "period": "2024-12",
-    "portfolio": 21252873620217.12,
+    "Outstanding": 21252873620217.12,
     "balance": 19480718131376.715,
     "docf": 1772155488840.3997,
     "interest_income": 173984917957.84,
@@ -1536,7 +1536,7 @@ const summaryData = [
   },
   {
     "period": "2024-11",
-    "portfolio": 21331008069421.406,
+    "Outstanding": 21331008069421.406,
     "balance": 19544888176681.094,
     "docf": 1786119892740.31,
     "interest_income": 174633194745.62,
@@ -1552,7 +1552,7 @@ const summaryData = [
   },
   {
     "period": "2024-10",
-    "portfolio": 21413006471064.36,
+    "Outstanding": 21413006471064.36,
     "balance": 19617833550495.504,
     "docf": 1795172920568.8496,
     "interest_income": 174915877063.39,
@@ -1568,7 +1568,7 @@ const summaryData = [
   },
   {
     "period": "2024-09",
-    "portfolio": 21193770261768.5,
+    "Outstanding": 21193770261768.5,
     "balance": 19413764970480.14,
     "docf": 1780005291288.3604,
     "interest_income": 173332167551.87,
@@ -1584,7 +1584,7 @@ const summaryData = [
   },
   {
     "period": "2024-08",
-    "portfolio": 21026585751070.867,
+    "Outstanding": 21026585751070.867,
     "balance": 19264441418315.984,
     "docf": 1762144332754.88,
     "interest_income": 172410116425.59003,
@@ -1600,7 +1600,7 @@ const summaryData = [
   },
   {
     "period": "2024-07",
-    "portfolio": 20743907741766.293,
+    "Outstanding": 20743907741766.293,
     "balance": 19000471593686.05,
     "docf": 1743436148080.2397,
     "interest_income": 169799049359.89005,
@@ -1616,7 +1616,7 @@ const summaryData = [
   },
   {
     "period": "2024-06",
-    "portfolio": 20411915728853.223,
+    "Outstanding": 20411915728853.223,
     "balance": 18688695998164.277,
     "docf": 1723219730688.9402,
     "interest_income": 167605342044.27997,
@@ -1632,7 +1632,7 @@ const summaryData = [
   },
   {
     "period": "2024-05",
-    "portfolio": 20142542258916.812,
+    "Outstanding": 20142542258916.812,
     "balance": 18429563855115.11,
     "docf": 1712978403801.7002,
     "interest_income": 165063330634.95004,
@@ -1648,7 +1648,7 @@ const summaryData = [
   },
   {
     "period": "2024-04",
-    "portfolio": 19898577055340.094,
+    "Outstanding": 19898577055340.094,
     "balance": 18207530614322.44,
     "docf": 1691046441017.6602,
     "interest_income": 163393392655.44,
@@ -1664,7 +1664,7 @@ const summaryData = [
   },
   {
     "period": "2024-03",
-    "portfolio": 19742039128498.82,
+    "Outstanding": 19742039128498.82,
     "balance": 18071890753557.566,
     "docf": 1670148374941.2495,
     "interest_income": 162740964598.74,
@@ -1680,7 +1680,7 @@ const summaryData = [
   },
   {
     "period": "2024-02",
-    "portfolio": 19428543944714.96,
+    "Outstanding": 19428543944714.96,
     "balance": 17787878373252.082,
     "docf": 1640665571462.88,
     "interest_income": 160372396628.02997,
@@ -1696,7 +1696,7 @@ const summaryData = [
   },
   {
     "period": "2024-01",
-    "portfolio": 19280428431352.184,
+    "Outstanding": 19280428431352.184,
     "balance": 17651041847479.16,
     "docf": 1629386583873.02,
     "interest_income": 159384503976.53,
@@ -1715,7 +1715,7 @@ const summaryData = [
 const lostData = [
   {
     "period": "2026-02",
-    "lost_portfolio": 1720202540.0099998,
+    "lost_Outstanding": 1720202540.0099998,
     "lost_count": 45,
     "direct_cost": 40007161.980000004,
     "lunas": 32113743.47,
@@ -1728,7 +1728,7 @@ const lostData = [
   },
   {
     "period": "2026-01",
-    "lost_portfolio": 28669990479.300003,
+    "lost_Outstanding": 28669990479.300003,
     "lost_count": 728,
     "direct_cost": 2136220776.3800004,
     "lunas": 453843448.2699998,
@@ -1741,7 +1741,7 @@ const lostData = [
   },
   {
     "period": "2025-12",
-    "lost_portfolio": 107062335459.91,
+    "lost_Outstanding": 107062335459.91,
     "lost_count": 1742,
     "direct_cost": 7243692758.58,
     "lunas": 539329845.3099998,
@@ -1754,7 +1754,7 @@ const lostData = [
   },
   {
     "period": "2025-11",
-    "lost_portfolio": 140138960288.82,
+    "lost_Outstanding": 140138960288.82,
     "lost_count": 2183,
     "direct_cost": 9857460385.38,
     "lunas": 646047604.9999998,
@@ -1767,7 +1767,7 @@ const lostData = [
   },
   {
     "period": "2025-10",
-    "lost_portfolio": 125929694390.24,
+    "lost_Outstanding": 125929694390.24,
     "lost_count": 1927,
     "direct_cost": 9750362306.48,
     "lunas": 532459989.67999995,
@@ -1780,7 +1780,7 @@ const lostData = [
   },
   {
     "period": "2025-09",
-    "lost_portfolio": 97636115507.91,
+    "lost_Outstanding": 97636115507.91,
     "lost_count": 1751,
     "direct_cost": 5495556936.189999,
     "lunas": 718327442.7599998,
@@ -1793,7 +1793,7 @@ const lostData = [
   },
   {
     "period": "2025-08",
-    "lost_portfolio": 39356035366.94,
+    "lost_Outstanding": 39356035366.94,
     "lost_count": 957,
     "direct_cost": 2618008681.87,
     "lunas": 518620099.21000004,
@@ -1806,7 +1806,7 @@ const lostData = [
   },
   {
     "period": "2025-07",
-    "lost_portfolio": 46386995212.38,
+    "lost_Outstanding": 46386995212.38,
     "lost_count": 1036,
     "direct_cost": 2387923043.7499995,
     "lunas": 430061774.4599999,
@@ -1819,7 +1819,7 @@ const lostData = [
   },
   {
     "period": "2025-06",
-    "lost_portfolio": 36148044325.880005,
+    "lost_Outstanding": 36148044325.880005,
     "lost_count": 928,
     "direct_cost": 1978777827.6500003,
     "lunas": 515879472.8699997,
@@ -1832,7 +1832,7 @@ const lostData = [
   },
   {
     "period": "2025-05",
-    "lost_portfolio": 35133255309.94,
+    "lost_Outstanding": 35133255309.94,
     "lost_count": 798,
     "direct_cost": 2142685283.36,
     "lunas": 449814874.01,
@@ -1845,7 +1845,7 @@ const lostData = [
   },
   {
     "period": "2025-04",
-    "lost_portfolio": 31498224570.31,
+    "lost_Outstanding": 31498224570.31,
     "lost_count": 812,
     "direct_cost": 1570349718.0400002,
     "lunas": 526470796.3100002,
@@ -1858,7 +1858,7 @@ const lostData = [
   },
   {
     "period": "2025-03",
-    "lost_portfolio": 35653560740.39,
+    "lost_Outstanding": 35653560740.39,
     "lost_count": 819,
     "direct_cost": 2216747555.64,
     "lunas": 466410626.8899998,
@@ -1871,7 +1871,7 @@ const lostData = [
   },
   {
     "period": "2025-02",
-    "lost_portfolio": 34230005039.18,
+    "lost_Outstanding": 34230005039.18,
     "lost_count": 816,
     "direct_cost": 1093891850.6999998,
     "lunas": 457320891.48999995,
@@ -1884,7 +1884,7 @@ const lostData = [
   },
   {
     "period": "2025-01",
-    "lost_portfolio": 21628264628.56,
+    "lost_Outstanding": 21628264628.56,
     "lost_count": 646,
     "direct_cost": 299505078.26000005,
     "lunas": 499528717.35000026,
@@ -1897,7 +1897,7 @@ const lostData = [
   },
   {
     "period": "2024-12",
-    "lost_portfolio": 25523227379.12,
+    "lost_Outstanding": 25523227379.12,
     "lost_count": 675,
     "direct_cost": 520680935.7599999,
     "lunas": 564423320.8600001,
@@ -1910,7 +1910,7 @@ const lostData = [
   },
   {
     "period": "2024-11",
-    "lost_portfolio": 276131554726.78,
+    "lost_Outstanding": 276131554726.78,
     "lost_count": 3445,
     "direct_cost": 21404835813.33,
     "lunas": 588028845.5900004,
@@ -1923,7 +1923,7 @@ const lostData = [
   },
   {
     "period": "2024-10",
-    "lost_portfolio": 64875271007.380005,
+    "lost_Outstanding": 64875271007.380005,
     "lost_count": 1191,
     "direct_cost": 3760284618.249999,
     "lunas": 681764011.6999998,
@@ -1936,7 +1936,7 @@ const lostData = [
   },
   {
     "period": "2024-09",
-    "lost_portfolio": 58040008601.74,
+    "lost_Outstanding": 58040008601.74,
     "lost_count": 1105,
     "direct_cost": 3149743398.2000003,
     "lunas": 653559755.17,
@@ -1949,7 +1949,7 @@ const lostData = [
   },
   {
     "period": "2024-08",
-    "lost_portfolio": 109071781933.37,
+    "lost_Outstanding": 109071781933.37,
     "lost_count": 1661,
     "direct_cost": 6421860839.550001,
     "lunas": 444179621.1000001,
@@ -1962,7 +1962,7 @@ const lostData = [
   },
   {
     "period": "2024-07",
-    "lost_portfolio": 45561521338.979996,
+    "lost_Outstanding": 45561521338.979996,
     "lost_count": 757,
     "direct_cost": 2290912141.66,
     "lunas": 322535544.1999998,
@@ -1975,7 +1975,7 @@ const lostData = [
   },
   {
     "period": "2024-06",
-    "lost_portfolio": 74466023263.61,
+    "lost_Outstanding": 74466023263.61,
     "lost_count": 1260,
     "direct_cost": 4380568380.42,
     "lunas": 392437663.0799997,
@@ -1988,7 +1988,7 @@ const lostData = [
   },
   {
     "period": "2024-05",
-    "lost_portfolio": 62970897659.27,
+    "lost_Outstanding": 62970897659.27,
     "lost_count": 948,
     "direct_cost": 3778153518.28,
     "lunas": 330024357.7499998,
@@ -2001,7 +2001,7 @@ const lostData = [
   },
   {
     "period": "2024-04",
-    "lost_portfolio": 110796440153.89001,
+    "lost_Outstanding": 110796440153.89001,
     "lost_count": 1729,
     "direct_cost": 8595662805.189999,
     "lunas": 405464594.59000003,
@@ -2014,7 +2014,7 @@ const lostData = [
   },
   {
     "period": "2024-03",
-    "lost_portfolio": 310441552366.57,
+    "lost_Outstanding": 310441552366.57,
     "lost_count": 4749,
     "direct_cost": 23672596153.02,
     "lunas": 449216421.96999997,
@@ -2027,7 +2027,7 @@ const lostData = [
   },
   {
     "period": "2024-02",
-    "lost_portfolio": 100201611823.31999,
+    "lost_Outstanding": 100201611823.31999,
     "lost_count": 1666,
     "direct_cost": 5304776995.25,
     "lunas": 398394046.2400001,
@@ -2045,42 +2045,42 @@ const ageDistribution = {
     {
       "age_group": "40-45 th",
       "debitur": 1457,
-      "portfolio": 182725183607.23,
+      "Outstanding": 182725183607.23,
       "period": "2024-01",
       "avg_Porto": 125411931.09624572
     },
     {
       "age_group": "46-50 th",
       "debitur": 4248,
-      "portfolio": 626885111173.97,
+      "Outstanding": 626885111173.97,
       "period": "2024-01",
       "avg_Porto": 147571824.66430554
     },
     {
       "age_group": "51-55 th",
       "debitur": 13160,
-      "portfolio": 2238563559835.53,
+      "Outstanding": 2238563559835.53,
       "period": "2024-01",
       "avg_Porto": 170103613.9692652
     },
     {
       "age_group": "56-60 th",
       "debitur": 28990,
-      "portfolio": 5651499535325.52,
+      "Outstanding": 5651499535325.52,
       "period": "2024-01",
       "avg_Porto": 194946517.25855535
     },
     {
       "age_group": "61-65 th",
       "debitur": 41371,
-      "portfolio": 8175524204840.45,
+      "Outstanding": 8175524204840.45,
       "period": "2024-01",
       "avg_Porto": 197614855.9338776
     },
     {
       "age_group": "> 65 th",
       "debitur": 24510,
-      "portfolio": 2405230836569.48,
+      "Outstanding": 2405230836569.48,
       "period": "2024-01",
       "avg_Porto": 98132633.07097022
     }
@@ -2089,42 +2089,42 @@ const ageDistribution = {
     {
       "age_group": "> 65 th",
       "debitur": 24507,
-      "portfolio": 2423475776248.15,
+      "Outstanding": 2423475776248.15,
       "period": "2024-02",
       "avg_Porto": 98889124.58677724
     },
     {
       "age_group": "56-60 th",
       "debitur": 29050,
-      "portfolio": 5665036029501.9,
+      "Outstanding": 5665036029501.9,
       "period": "2024-02",
       "avg_Porto": 195009846.1102203
     },
     {
       "age_group": "61-65 th",
       "debitur": 41643,
-      "portfolio": 8268961805242.99,
+      "Outstanding": 8268961805242.99,
       "period": "2024-02",
       "avg_Porto": 198567869.87592128
     },
     {
       "age_group": "46-50 th",
       "debitur": 4293,
-      "portfolio": 635528675675.96,
+      "Outstanding": 635528675675.96,
       "period": "2024-02",
       "avg_Porto": 148038359.11389703
     },
     {
       "age_group": "40-45 th",
       "debitur": 1478,
-      "portfolio": 185227057510.67,
+      "Outstanding": 185227057510.67,
       "period": "2024-02",
       "avg_Porto": 125322772.33468878
     },
     {
       "age_group": "51-55 th",
       "debitur": 13218,
-      "portfolio": 2250314600535.29,
+      "Outstanding": 2250314600535.29,
       "period": "2024-02",
       "avg_Porto": 170246224.8854055
     }
@@ -2133,42 +2133,42 @@ const ageDistribution = {
     {
       "age_group": "40-45 th",
       "debitur": 1484,
-      "portfolio": 188308316330.2,
+      "Outstanding": 188308316330.2,
       "period": "2024-03",
       "avg_Porto": 126892396.44892184
     },
     {
       "age_group": "46-50 th",
       "debitur": 4321,
-      "portfolio": 642572612902.94,
+      "Outstanding": 642572612902.94,
       "period": "2024-03",
       "avg_Porto": 148709236.95971763
     },
     {
       "age_group": "51-55 th",
       "debitur": 13223,
-      "portfolio": 2270870033489.3,
+      "Outstanding": 2270870033489.3,
       "period": "2024-03",
       "avg_Porto": 171736370.98156998
     },
     {
       "age_group": "56-60 th",
       "debitur": 29097,
-      "portfolio": 5728922809525.36,
+      "Outstanding": 5728922809525.36,
       "period": "2024-03",
       "avg_Porto": 196890497.6294931
     },
     {
       "age_group": "61-65 th",
       "debitur": 42048,
-      "portfolio": 8449972360092.71,
+      "Outstanding": 8449972360092.71,
       "period": "2024-03",
       "avg_Porto": 200960149.3553251
     },
     {
       "age_group": "> 65 th",
       "debitur": 24613,
-      "portfolio": 2461392996158.31,
+      "Outstanding": 2461392996158.31,
       "period": "2024-03",
       "avg_Porto": 100003778.33495754
     }
@@ -2177,42 +2177,42 @@ const ageDistribution = {
     {
       "age_group": "61-65 th",
       "debitur": 42538,
-      "portfolio": 8601329764467.95,
+      "Outstanding": 8601329764467.95,
       "period": "2024-04",
       "avg_Porto": 202203436.09168157
     },
     {
       "age_group": "> 65 th",
       "debitur": 24819,
-      "portfolio": 2497997403704.33,
+      "Outstanding": 2497997403704.33,
       "period": "2024-04",
       "avg_Porto": 100648591.95391957
     },
     {
       "age_group": "56-60 th",
       "debitur": 28919,
-      "portfolio": 5703283027396.28,
+      "Outstanding": 5703283027396.28,
       "period": "2024-04",
       "avg_Porto": 197215776.04330304
     },
     {
       "age_group": "46-50 th",
       "debitur": 4313,
-      "portfolio": 641604992938.39,
+      "Outstanding": 641604992938.39,
       "period": "2024-04",
       "avg_Porto": 148760721.7571041
     },
     {
       "age_group": "40-45 th",
       "debitur": 1470,
-      "portfolio": 186726359808.14,
+      "Outstanding": 186726359808.14,
       "period": "2024-04",
       "avg_Porto": 127024734.56336056
     },
     {
       "age_group": "51-55 th",
       "debitur": 13186,
-      "portfolio": 2267635507025.01,
+      "Outstanding": 2267635507025.01,
       "period": "2024-04",
       "avg_Porto": 171972964.282194
     }
@@ -2221,42 +2221,42 @@ const ageDistribution = {
     {
       "age_group": "40-45 th",
       "debitur": 1470,
-      "portfolio": 186221527961.6,
+      "Outstanding": 186221527961.6,
       "period": "2024-05",
       "avg_Porto": 126681311.53850341
     },
     {
       "age_group": "46-50 th",
       "debitur": 4347,
-      "portfolio": 648980827206.56,
+      "Outstanding": 648980827206.56,
       "period": "2024-05",
       "avg_Porto": 149293956.10916954
     },
     {
       "age_group": "51-55 th",
       "debitur": 13149,
-      "portfolio": 2271120459588.3,
+      "Outstanding": 2271120459588.3,
       "period": "2024-05",
       "avg_Porto": 172721914.9432124
     },
     {
       "age_group": "56-60 th",
       "debitur": 28865,
-      "portfolio": 5720108615109.61,
+      "Outstanding": 5720108615109.61,
       "period": "2024-05",
       "avg_Porto": 198167629.13942873
     },
     {
       "age_group": "61-65 th",
       "debitur": 43000,
-      "portfolio": 8768267217530.37,
+      "Outstanding": 8768267217530.37,
       "period": "2024-05",
       "avg_Porto": 203913191.10535744
     },
     {
       "age_group": "> 65 th",
       "debitur": 25069,
-      "portfolio": 2547843611520.37,
+      "Outstanding": 2547843611520.37,
       "period": "2024-05",
       "avg_Porto": 101633236.72744705
     }
@@ -2265,42 +2265,42 @@ const ageDistribution = {
     {
       "age_group": "40-45 th",
       "debitur": 1447,
-      "portfolio": 184503126606.02,
+      "Outstanding": 184503126606.02,
       "period": "2024-06",
       "avg_Porto": 127507343.88805804
     },
     {
       "age_group": "46-50 th",
       "debitur": 4360,
-      "portfolio": 654504052795.99,
+      "Outstanding": 654504052795.99,
       "period": "2024-06",
       "avg_Porto": 150115608.43944725
     },
     {
       "age_group": "51-55 th",
       "debitur": 13046,
-      "portfolio": 2265380657138.79,
+      "Outstanding": 2265380657138.79,
       "period": "2024-06",
       "avg_Porto": 173645612.22894296
     },
     {
       "age_group": "56-60 th",
       "debitur": 28826,
-      "portfolio": 5760433318998.36,
+      "Outstanding": 5760433318998.36,
       "period": "2024-06",
       "avg_Porto": 199834639.52675918
     },
     {
       "age_group": "61-65 th",
       "debitur": 43260,
-      "portfolio": 8940750848181.33,
+      "Outstanding": 8940750848181.33,
       "period": "2024-06",
       "avg_Porto": 206674776.8881491
     },
     {
       "age_group": "> 65 th",
       "debitur": 25255,
-      "portfolio": 2606343725132.73,
+      "Outstanding": 2606343725132.73,
       "period": "2024-06",
       "avg_Porto": 103201097.80767095
     }
@@ -2309,42 +2309,42 @@ const ageDistribution = {
     {
       "age_group": "61-65 th",
       "debitur": 43722,
-      "portfolio": 9137465412246.58,
+      "Outstanding": 9137465412246.58,
       "period": "2024-07",
       "avg_Porto": 208990105.94772837
     },
     {
       "age_group": "> 65 th",
       "debitur": 25670,
-      "portfolio": 2682503632018.11,
+      "Outstanding": 2682503632018.11,
       "period": "2024-07",
       "avg_Porto": 104499557.14912777
     },
     {
       "age_group": "56-60 th",
       "debitur": 28785,
-      "portfolio": 5797269465101.07,
+      "Outstanding": 5797269465101.07,
       "period": "2024-07",
       "avg_Porto": 201398973.9482741
     },
     {
       "age_group": "40-45 th",
       "debitur": 1445,
-      "portfolio": 185569672067.94,
+      "Outstanding": 185569672067.94,
       "period": "2024-07",
       "avg_Porto": 128421918.38611765
     },
     {
       "age_group": "46-50 th",
       "debitur": 4370,
-      "portfolio": 660090304040.2,
+      "Outstanding": 660090304040.2,
       "period": "2024-07",
       "avg_Porto": 151050412.82384437
     },
     {
       "age_group": "51-55 th",
       "debitur": 13032,
-      "portfolio": 2281009256292.39,
+      "Outstanding": 2281009256292.39,
       "period": "2024-07",
       "avg_Porto": 175031403.95122698
     }
@@ -2353,42 +2353,42 @@ const ageDistribution = {
     {
       "age_group": "40-45 th",
       "debitur": 1416,
-      "portfolio": 181470551974.5,
+      "Outstanding": 181470551974.5,
       "period": "2024-08",
       "avg_Porto": 128157169.47351696
     },
     {
       "age_group": "46-50 th",
       "debitur": 4390,
-      "portfolio": 666840062787.17,
+      "Outstanding": 666840062787.17,
       "period": "2024-08",
       "avg_Porto": 151899786.51188383
     },
     {
       "age_group": "51-55 th",
       "debitur": 13021,
-      "portfolio": 2292438330282.6,
+      "Outstanding": 2292438330282.6,
       "period": "2024-08",
       "avg_Porto": 176057010.23597267
     },
     {
       "age_group": "56-60 th",
       "debitur": 28902,
-      "portfolio": 5859195880816.3,
+      "Outstanding": 5859195880816.3,
       "period": "2024-08",
       "avg_Porto": 202726312.39416996
     },
     {
       "age_group": "61-65 th",
       "debitur": 43951,
-      "portfolio": 9281721692409.3,
+      "Outstanding": 9281721692409.3,
       "period": "2024-08",
       "avg_Porto": 211183401.79766786
     },
     {
       "age_group": "> 65 th",
       "debitur": 25829,
-      "portfolio": 2744919232801.0,
+      "Outstanding": 2744919232801.0,
       "period": "2024-08",
       "avg_Porto": 106272764.44310659
     }
@@ -2397,42 +2397,42 @@ const ageDistribution = {
     {
       "age_group": "46-50 th",
       "debitur": 4393,
-      "portfolio": 670923780607.78,
+      "Outstanding": 670923780607.78,
       "period": "2024-09",
       "avg_Porto": 152725650.03591624
     },
     {
       "age_group": "51-55 th",
       "debitur": 12927,
-      "portfolio": 2283934419015.93,
+      "Outstanding": 2283934419015.93,
       "period": "2024-09",
       "avg_Porto": 176679385.70557207
     },
     {
       "age_group": "56-60 th",
       "debitur": 28822,
-      "portfolio": 5850559830599.52,
+      "Outstanding": 5850559830599.52,
       "period": "2024-09",
       "avg_Porto": 202989377.2326528
     },
     {
       "age_group": "61-65 th",
       "debitur": 44060,
-      "portfolio": 9374373042039.52,
+      "Outstanding": 9374373042039.52,
       "period": "2024-09",
       "avg_Porto": 212763800.31864548
     },
     {
       "age_group": "> 65 th",
       "debitur": 26228,
-      "portfolio": 2834954631786.94,
+      "Outstanding": 2834954631786.94,
       "period": "2024-09",
       "avg_Porto": 108088860.44635275
     },
     {
       "age_group": "40-45 th",
       "debitur": 1395,
-      "portfolio": 179024557718.81,
+      "Outstanding": 179024557718.81,
       "period": "2024-09",
       "avg_Porto": 128333016.2858853
     }
@@ -2441,42 +2441,42 @@ const ageDistribution = {
     {
       "age_group": "56-60 th",
       "debitur": 28891,
-      "portfolio": 5876493903845.85,
+      "Outstanding": 5876493903845.85,
       "period": "2024-10",
       "avg_Porto": 203402232.66227716
     },
     {
       "age_group": "61-65 th",
       "debitur": 44337,
-      "portfolio": 9477338974969.87,
+      "Outstanding": 9477338974969.87,
       "period": "2024-10",
       "avg_Porto": 213756884.20438614
     },
     {
       "age_group": "> 65 th",
       "debitur": 26329,
-      "portfolio": 2889005528899.44,
+      "Outstanding": 2889005528899.44,
       "period": "2024-10",
       "avg_Porto": 109727127.08038436
     },
     {
       "age_group": "51-55 th",
       "debitur": 12994,
-      "portfolio": 2311978052292.09,
+      "Outstanding": 2311978052292.09,
       "period": "2024-10",
       "avg_Porto": 177926585.52347928
     },
     {
       "age_group": "40-45 th",
       "debitur": 1393,
-      "portfolio": 179599875625.45,
+      "Outstanding": 179599875625.45,
       "period": "2024-10",
       "avg_Porto": 128930276.83090453
     },
     {
       "age_group": "46-50 th",
       "debitur": 4419,
-      "portfolio": 678590135431.66,
+      "Outstanding": 678590135431.66,
       "period": "2024-10",
       "avg_Porto": 153561922.47831184
     }
@@ -2485,42 +2485,42 @@ const ageDistribution = {
     {
       "age_group": "40-45 th",
       "debitur": 1372,
-      "portfolio": 177042764123.96,
+      "Outstanding": 177042764123.96,
       "period": "2024-11",
       "avg_Porto": 129039915.5422449
     },
     {
       "age_group": "46-50 th",
       "debitur": 4440,
-      "portfolio": 684261354088.44,
+      "Outstanding": 684261354088.44,
       "period": "2024-11",
       "avg_Porto": 154112917.58748648
     },
     {
       "age_group": "51-55 th",
       "debitur": 12946,
-      "portfolio": 2319125954791.73,
+      "Outstanding": 2319125954791.73,
       "period": "2024-11",
       "avg_Porto": 179138417.64187625
     },
     {
       "age_group": "56-60 th",
       "debitur": 28584,
-      "portfolio": 5830781288888.72,
+      "Outstanding": 5830781288888.72,
       "period": "2024-11",
       "avg_Porto": 203987590.57125384
     },
     {
       "age_group": "61-65 th",
       "debitur": 43888,
-      "portfolio": 9427462386121.95,
+      "Outstanding": 9427462386121.95,
       "period": "2024-11",
       "avg_Porto": 214807290.970697
     },
     {
       "age_group": "> 65 th",
       "debitur": 26054,
-      "portfolio": 2892334321406.61,
+      "Outstanding": 2892334321406.61,
       "period": "2024-11",
       "avg_Porto": 111013062.15577684
     }
@@ -2529,42 +2529,42 @@ const ageDistribution = {
     {
       "age_group": "56-60 th",
       "debitur": 28202,
-      "portfolio": 5710399800293.98,
+      "Outstanding": 5710399800293.98,
       "period": "2024-12",
       "avg_Porto": 202482086.3872768
     },
     {
       "age_group": "61-65 th",
       "debitur": 43927,
-      "portfolio": 9450803069783.9,
+      "Outstanding": 9450803069783.9,
       "period": "2024-12",
       "avg_Porto": 215147928.83155918
     },
     {
       "age_group": "40-45 th",
       "debitur": 1368,
-      "portfolio": 176786020251.88,
+      "Outstanding": 176786020251.88,
       "period": "2024-12",
       "avg_Porto": 129229546.96774854
     },
     {
       "age_group": "46-50 th",
       "debitur": 4422,
-      "portfolio": 680637004608.73,
+      "Outstanding": 680637004608.73,
       "period": "2024-12",
       "avg_Porto": 153920625.19419494
     },
     {
       "age_group": "51-55 th",
       "debitur": 12844,
-      "portfolio": 2297796821236.53,
+      "Outstanding": 2297796821236.53,
       "period": "2024-12",
       "avg_Porto": 178900406.51171985
     },
     {
       "age_group": "> 65 th",
       "debitur": 26276,
-      "portfolio": 2936450904042.1,
+      "Outstanding": 2936450904042.1,
       "period": "2024-12",
       "avg_Porto": 111754106.56272264
     }
@@ -2573,42 +2573,42 @@ const ageDistribution = {
     {
       "age_group": "61-65 th",
       "debitur": 43873,
-      "portfolio": 9451670070730.85,
+      "Outstanding": 9451670070730.85,
       "period": "2025-01",
       "avg_Porto": 215432499.95967564
     },
     {
       "age_group": "56-60 th",
       "debitur": 27715,
-      "portfolio": 5572602547134.42,
+      "Outstanding": 5572602547134.42,
       "period": "2025-01",
       "avg_Porto": 201068105.61553022
     },
     {
       "age_group": "> 65 th",
       "debitur": 26782,
-      "portfolio": 3021393484135.96,
+      "Outstanding": 3021393484135.96,
       "period": "2025-01",
       "avg_Porto": 112814333.6620103
     },
     {
       "age_group": "46-50 th",
       "debitur": 4380,
-      "portfolio": 674037619950.45,
+      "Outstanding": 674037619950.45,
       "period": "2025-01",
       "avg_Porto": 153889867.5685959
     },
     {
       "age_group": "40-45 th",
       "debitur": 1356,
-      "portfolio": 174896512789.25,
+      "Outstanding": 174896512789.25,
       "period": "2025-01",
       "avg_Porto": 128979729.19561209
     },
     {
       "age_group": "51-55 th",
       "debitur": 12680,
-      "portfolio": 2265411129187.98,
+      "Outstanding": 2265411129187.98,
       "period": "2025-01",
       "avg_Porto": 178660183.6899038
     }
@@ -2617,42 +2617,42 @@ const ageDistribution = {
     {
       "age_group": "61-65 th",
       "debitur": 43858,
-      "portfolio": 9435561846327.87,
+      "Outstanding": 9435561846327.87,
       "period": "2025-02",
       "avg_Porto": 215138899.3188898
     },
     {
       "age_group": "56-60 th",
       "debitur": 27428,
-      "portfolio": 5494638337278.75,
+      "Outstanding": 5494638337278.75,
       "period": "2025-02",
       "avg_Porto": 200329529.5784873
     },
     {
       "age_group": "> 65 th",
       "debitur": 26913,
-      "portfolio": 3060535977784.65,
+      "Outstanding": 3060535977784.65,
       "period": "2025-02",
       "avg_Porto": 113719614.2304704
     },
     {
       "age_group": "46-50 th",
       "debitur": 4390,
-      "portfolio": 675110500152.48,
+      "Outstanding": 675110500152.48,
       "period": "2025-02",
       "avg_Porto": 153783713.01878816
     },
     {
       "age_group": "40-45 th",
       "debitur": 1324,
-      "portfolio": 169846377001.77,
+      "Outstanding": 169846377001.77,
       "period": "2025-02",
       "avg_Porto": 128282762.08592899
     },
     {
       "age_group": "51-55 th",
       "debitur": 12572,
-      "portfolio": 2240208572755.53,
+      "Outstanding": 2240208572755.53,
       "period": "2025-02",
       "avg_Porto": 178190309.63693365
     }
@@ -2661,42 +2661,42 @@ const ageDistribution = {
     {
       "age_group": "40-45 th",
       "debitur": 1313,
-      "portfolio": 168763658620.72,
+      "Outstanding": 168763658620.72,
       "period": "2025-03",
       "avg_Porto": 128532870.2366489
     },
     {
       "age_group": "46-50 th",
       "debitur": 4387,
-      "portfolio": 674149965650.58,
+      "Outstanding": 674149965650.58,
       "period": "2025-03",
       "avg_Porto": 153669926.0657807
     },
     {
       "age_group": "51-55 th",
       "debitur": 12461,
-      "portfolio": 2212188203975.36,
+      "Outstanding": 2212188203975.36,
       "period": "2025-03",
       "avg_Porto": 177528946.63151914
     },
     {
       "age_group": "56-60 th",
       "debitur": 27158,
-      "portfolio": 5413351181201.65,
+      "Outstanding": 5413351181201.65,
       "period": "2025-03",
       "avg_Porto": 199328049.97428566
     },
     {
       "age_group": "61-65 th",
       "debitur": 43854,
-      "portfolio": 9441836665101.5,
+      "Outstanding": 9441836665101.5,
       "period": "2025-03",
       "avg_Porto": 215301606.8112715
     },
     {
       "age_group": "> 65 th",
       "debitur": 27121,
-      "portfolio": 3098791256122.62,
+      "Outstanding": 3098791256122.62,
       "period": "2025-03",
       "avg_Porto": 114258001.4056495
     }
@@ -2705,42 +2705,42 @@ const ageDistribution = {
     {
       "age_group": "61-65 th",
       "debitur": 43870,
-      "portfolio": 9438696174665.38,
+      "Outstanding": 9438696174665.38,
       "period": "2025-04",
       "avg_Porto": 215151497.0290718
     },
     {
       "age_group": "56-60 th",
       "debitur": 26829,
-      "portfolio": 5319914659273.08,
+      "Outstanding": 5319914659273.08,
       "period": "2025-04",
       "avg_Porto": 198289711.1063804
     },
     {
       "age_group": "> 65 th",
       "debitur": 27408,
-      "portfolio": 3160907053193.01,
+      "Outstanding": 3160907053193.01,
       "period": "2025-04",
       "avg_Porto": 115327898.90517403
     },
     {
       "age_group": "46-50 th",
       "debitur": 4351,
-      "portfolio": 667198640746.88,
+      "Outstanding": 667198640746.88,
       "period": "2025-04",
       "avg_Porto": 153343746.43688348
     },
     {
       "age_group": "40-45 th",
       "debitur": 1282,
-      "portfolio": 164243421698.62,
+      "Outstanding": 164243421698.62,
       "period": "2025-04",
       "avg_Porto": 128114993.52466458
     },
     {
       "age_group": "51-55 th",
       "debitur": 12325,
-      "portfolio": 2183958706600.96,
+      "Outstanding": 2183958706600.96,
       "period": "2025-04",
       "avg_Porto": 177197460.9818223
     }
@@ -2749,42 +2749,42 @@ const ageDistribution = {
     {
       "age_group": "40-45 th",
       "debitur": 1253,
-      "portfolio": 159604920602.76,
+      "Outstanding": 159604920602.76,
       "period": "2025-05",
       "avg_Porto": 127378228.73324822
     },
     {
       "age_group": "46-50 th",
       "debitur": 4323,
-      "portfolio": 665813941305.63,
+      "Outstanding": 665813941305.63,
       "period": "2025-05",
       "avg_Porto": 154016641.52339348
     },
     {
       "age_group": "51-55 th",
       "debitur": 12180,
-      "portfolio": 2153347271929.77,
+      "Outstanding": 2153347271929.77,
       "period": "2025-05",
       "avg_Porto": 176793700.48684484
     },
     {
       "age_group": "56-60 th",
       "debitur": 26452,
-      "portfolio": 5215875285824.38,
+      "Outstanding": 5215875285824.38,
       "period": "2025-05",
       "avg_Porto": 197182643.4985778
     },
     {
       "age_group": "61-65 th",
       "debitur": 43900,
-      "portfolio": 9437076434303.43,
+      "Outstanding": 9437076434303.43,
       "period": "2025-05",
       "avg_Porto": 214967572.53538564
     },
     {
       "age_group": "> 65 th",
       "debitur": 27795,
-      "portfolio": 3237554997303.84,
+      "Outstanding": 3237554997303.84,
       "period": "2025-05",
       "avg_Porto": 116479762.4502191
     }
@@ -2793,42 +2793,42 @@ const ageDistribution = {
     {
       "age_group": "> 65 th",
       "debitur": 28171,
-      "portfolio": 3316391139692.26,
+      "Outstanding": 3316391139692.26,
       "period": "2025-06",
       "avg_Porto": 117723585.94626601
     },
     {
       "age_group": "61-65 th",
       "debitur": 43769,
-      "portfolio": 9411086949247.81,
+      "Outstanding": 9411086949247.81,
       "period": "2025-06",
       "avg_Porto": 215017179.9503715
     },
     {
       "age_group": "56-60 th",
       "debitur": 26217,
-      "portfolio": 5137079094533.28,
+      "Outstanding": 5137079094533.28,
       "period": "2025-06",
       "avg_Porto": 195944581.55140865
     },
     {
       "age_group": "51-55 th",
       "debitur": 12027,
-      "portfolio": 2124301591856.8,
+      "Outstanding": 2124301591856.8,
       "period": "2025-06",
       "avg_Porto": 176627720.28409413
     },
     {
       "age_group": "40-45 th",
       "debitur": 1233,
-      "portfolio": 156607768788.01,
+      "Outstanding": 156607768788.01,
       "period": "2025-06",
       "avg_Porto": 127013599.99027576
     },
     {
       "age_group": "46-50 th",
       "debitur": 4292,
-      "portfolio": 661418005020.5,
+      "Outstanding": 661418005020.5,
       "period": "2025-06",
       "avg_Porto": 154104847.39527026
     }
@@ -2837,42 +2837,42 @@ const ageDistribution = {
     {
       "age_group": "40-45 th",
       "debitur": 1205,
-      "portfolio": 152894568835.71,
+      "Outstanding": 152894568835.71,
       "period": "2025-07",
       "avg_Porto": 126883459.61469708
     },
     {
       "age_group": "46-50 th",
       "debitur": 4219,
-      "portfolio": 648418402320.93,
+      "Outstanding": 648418402320.93,
       "period": "2025-07",
       "avg_Porto": 153690069.28678125
     },
     {
       "age_group": "51-55 th",
       "debitur": 11863,
-      "portfolio": 2098642443145.13,
+      "Outstanding": 2098642443145.13,
       "period": "2025-07",
       "avg_Porto": 176906553.4135657
     },
     {
       "age_group": "56-60 th",
       "debitur": 25863,
-      "portfolio": 5030710031837.32,
+      "Outstanding": 5030710031837.32,
       "period": "2025-07",
       "avg_Porto": 194513785.40143526
     },
     {
       "age_group": "61-65 th",
       "debitur": 43711,
-      "portfolio": 9410028067902.71,
+      "Outstanding": 9410028067902.71,
       "period": "2025-07",
       "avg_Porto": 215278261.03046626
     },
     {
       "age_group": "> 65 th",
       "debitur": 28554,
-      "portfolio": 3383169955956.51,
+      "Outstanding": 3383169955956.51,
       "period": "2025-07",
       "avg_Porto": 118483223.22464487
     }
@@ -2881,42 +2881,42 @@ const ageDistribution = {
     {
       "age_group": "> 65 th",
       "debitur": 28969,
-      "portfolio": 3468325933138.52,
+      "Outstanding": 3468325933138.52,
       "period": "2025-08",
       "avg_Porto": 119725428.32470986
     },
     {
       "age_group": "61-65 th",
       "debitur": 43532,
-      "portfolio": 9372017514117.79,
+      "Outstanding": 9372017514117.79,
       "period": "2025-08",
       "avg_Porto": 215290304.00895408
     },
     {
       "age_group": "56-60 th",
       "debitur": 25566,
-      "portfolio": 4947420967351.69,
+      "Outstanding": 4947420967351.69,
       "period": "2025-08",
       "avg_Porto": 193515644.50253034
     },
     {
       "age_group": "46-50 th",
       "debitur": 4162,
-      "portfolio": 639445752554.53,
+      "Outstanding": 639445752554.53,
       "period": "2025-08",
       "avg_Porto": 153639056.35620615
     },
     {
       "age_group": "40-45 th",
       "debitur": 1172,
-      "portfolio": 148068804734.23,
+      "Outstanding": 148068804734.23,
       "period": "2025-08",
       "avg_Porto": 126338570.59234643
     },
     {
       "age_group": "51-55 th",
       "debitur": 11730,
-      "portfolio": 2076011077029.68,
+      "Outstanding": 2076011077029.68,
       "period": "2025-08",
       "avg_Porto": 176983041.5200068
     }
@@ -2925,42 +2925,42 @@ const ageDistribution = {
     {
       "age_group": "40-45 th",
       "debitur": 1146,
-      "portfolio": 145115698207.55,
+      "Outstanding": 145115698207.55,
       "period": "2025-09",
       "avg_Porto": 126628008.90711169
     },
     {
       "age_group": "46-50 th",
       "debitur": 4117,
-      "portfolio": 631713383794.34,
+      "Outstanding": 631713383794.34,
       "period": "2025-09",
       "avg_Porto": 153440219.5274083
     },
     {
       "age_group": "51-55 th",
       "debitur": 11574,
-      "portfolio": 2048169240814.56,
+      "Outstanding": 2048169240814.56,
       "period": "2025-09",
       "avg_Porto": 176962954.96928978
     },
     {
       "age_group": "56-60 th",
       "debitur": 25208,
-      "portfolio": 4857314446906.32,
+      "Outstanding": 4857314446906.32,
       "period": "2025-09",
       "avg_Porto": 192689402.05118695
     },
     {
       "age_group": "61-65 th",
       "debitur": 43240,
-      "portfolio": 9301195483429.31,
+      "Outstanding": 9301195483429.31,
       "period": "2025-09",
       "avg_Porto": 215106278.5251922
     },
     {
       "age_group": "> 65 th",
       "debitur": 29143,
-      "portfolio": 3535415670569.32,
+      "Outstanding": 3535415670569.32,
       "period": "2025-09",
       "avg_Porto": 121312688.1436132
     }
@@ -2969,42 +2969,42 @@ const ageDistribution = {
     {
       "age_group": "40-45 th",
       "debitur": 1112,
-      "portfolio": 140791561426.27,
+      "Outstanding": 140791561426.27,
       "period": "2025-10",
       "avg_Porto": 126611116.39053057
     },
     {
       "age_group": "46-50 th",
       "debitur": 4075,
-      "portfolio": 622493030487.19,
+      "Outstanding": 622493030487.19,
       "period": "2025-10",
       "avg_Porto": 152759025.886427
     },
     {
       "age_group": "51-55 th",
       "debitur": 11414,
-      "portfolio": 2013805595549.35,
+      "Outstanding": 2013805595549.35,
       "period": "2025-10",
       "avg_Porto": 176432941.6111223
     },
     {
       "age_group": "56-60 th",
       "debitur": 25006,
-      "portfolio": 4799574128025.68,
+      "Outstanding": 4799574128025.68,
       "period": "2025-10",
       "avg_Porto": 191936900.2649636
     },
     {
       "age_group": "61-65 th",
       "debitur": 42821,
-      "portfolio": 9199667680243.53,
+      "Outstanding": 9199667680243.53,
       "period": "2025-10",
       "avg_Porto": 214840094.35191914
     },
     {
       "age_group": "> 65 th",
       "debitur": 29261,
-      "portfolio": 3576362170660.27,
+      "Outstanding": 3576362170660.27,
       "period": "2025-10",
       "avg_Porto": 122222828.01887393
     }
@@ -3013,42 +3013,42 @@ const ageDistribution = {
     {
       "age_group": "> 65 th",
       "debitur": 29219,
-      "portfolio": 3595909812592.96,
+      "Outstanding": 3595909812592.96,
       "period": "2025-11",
       "avg_Porto": 123067518.14206372
     },
     {
       "age_group": "56-60 th",
       "debitur": 24699,
-      "portfolio": 4718645216700.81,
+      "Outstanding": 4718645216700.81,
       "period": "2025-11",
       "avg_Porto": 191046002.53859708
     },
     {
       "age_group": "61-65 th",
       "debitur": 42441,
-      "portfolio": 9103836429475.21,
+      "Outstanding": 9103836429475.21,
       "period": "2025-11",
       "avg_Porto": 214505700.37169743
     },
     {
       "age_group": "46-50 th",
       "debitur": 4022,
-      "portfolio": 611037782105.47,
+      "Outstanding": 611037782105.47,
       "period": "2025-11",
       "avg_Porto": 151923864.27286673
     },
     {
       "age_group": "40-45 th",
       "debitur": 1075,
-      "portfolio": 135289954412.21,
+      "Outstanding": 135289954412.21,
       "period": "2025-11",
       "avg_Porto": 125851120.38345116
     },
     {
       "age_group": "51-55 th",
       "debitur": 11209,
-      "portfolio": 1973940033879.8,
+      "Outstanding": 1973940033879.8,
       "period": "2025-11",
       "avg_Porto": 176103134.43481132
     }
@@ -3057,42 +3057,42 @@ const ageDistribution = {
     {
       "age_group": "40-45 th",
       "debitur": 1051,
-      "portfolio": 131024964299.53,
+      "Outstanding": 131024964299.53,
       "period": "2025-12",
       "avg_Porto": 124666949.85683158
     },
     {
       "age_group": "46-50 th",
       "debitur": 3972,
-      "portfolio": 599216247693.34,
+      "Outstanding": 599216247693.34,
       "period": "2025-12",
       "avg_Porto": 150860082.50084087
     },
     {
       "age_group": "51-55 th",
       "debitur": 11066,
-      "portfolio": 1942136767218.36,
+      "Outstanding": 1942136767218.36,
       "period": "2025-12",
       "avg_Porto": 175504858.77628413
     },
     {
       "age_group": "56-60 th",
       "debitur": 24405,
-      "portfolio": 4639069721036.17,
+      "Outstanding": 4639069721036.17,
       "period": "2025-12",
       "avg_Porto": 190086856.01459414
     },
     {
       "age_group": "61-65 th",
       "debitur": 42077,
-      "portfolio": 9011534159825.06,
+      "Outstanding": 9011534159825.06,
       "period": "2025-12",
       "avg_Porto": 214167696.3620282
     },
     {
       "age_group": "> 65 th",
       "debitur": 29312,
-      "portfolio": 3632411957157.86,
+      "Outstanding": 3632411957157.86,
       "period": "2025-12",
       "avg_Porto": 123922351.15849686
     }
@@ -3101,42 +3101,42 @@ const ageDistribution = {
     {
       "age_group": "> 65 th",
       "debitur": 30021,
-      "portfolio": 3752702891308.73,
+      "Outstanding": 3752702891308.73,
       "period": "2026-01",
       "avg_Porto": 125002594.56076513
     },
     {
       "age_group": "56-60 th",
       "debitur": 24134,
-      "portfolio": 4562675918895.5,
+      "Outstanding": 4562675918895.5,
       "period": "2026-01",
       "avg_Porto": 189055934.32068866
     },
     {
       "age_group": "51-55 th",
       "debitur": 10844,
-      "portfolio": 1894198494101.52,
+      "Outstanding": 1894198494101.52,
       "period": "2026-01",
       "avg_Porto": 174677102.00124678
     },
     {
       "age_group": "40-45 th",
       "debitur": 1020,
-      "portfolio": 125878366817.17,
+      "Outstanding": 125878366817.17,
       "period": "2026-01",
       "avg_Porto": 123410163.5462451
     },
     {
       "age_group": "61-65 th",
       "debitur": 41621,
-      "portfolio": 8901423467472.02,
+      "Outstanding": 8901423467472.02,
       "period": "2026-01",
       "avg_Porto": 213868563.16455683
     },
     {
       "age_group": "46-50 th",
       "debitur": 3924,
-      "portfolio": 589237990047.97,
+      "Outstanding": 589237990047.97,
       "period": "2026-01",
       "avg_Porto": 150162586.65850407
     }
@@ -3145,42 +3145,42 @@ const ageDistribution = {
     {
       "age_group": "61-65 th",
       "debitur": 41458,
-      "portfolio": 8873198306289.02,
+      "Outstanding": 8873198306289.02,
       "period": "2026-02",
       "avg_Porto": 214028614.6531193
     },
     {
       "age_group": "40-45 th",
       "debitur": 993,
-      "portfolio": 122234090567.55,
+      "Outstanding": 122234090567.55,
       "period": "2026-02",
       "avg_Porto": 123095760.89380665
     },
     {
       "age_group": "46-50 th",
       "debitur": 3865,
-      "portfolio": 578969281536.01,
+      "Outstanding": 578969281536.01,
       "period": "2026-02",
       "avg_Porto": 149798002.9847374
     },
     {
       "age_group": "51-55 th",
       "debitur": 10676,
-      "portfolio": 1861427761098.24,
+      "Outstanding": 1861427761098.24,
       "period": "2026-02",
       "avg_Porto": 174356290.8484676
     },
     {
       "age_group": "56-60 th",
       "debitur": 23908,
-      "portfolio": 4513072589269.58,
+      "Outstanding": 4513072589269.58,
       "period": "2026-02",
       "avg_Porto": 188768303.04791617
     },
     {
       "age_group": "> 65 th",
       "debitur": 30634,
-      "portfolio": 3869377859555.66,
+      "Outstanding": 3869377859555.66,
       "period": "2026-02",
       "avg_Porto": 126309912.50100085
     }
@@ -4975,189 +4975,189 @@ const productData = [
   }
 ];
 // ========================================================================
-// PORTFOLIO ANALYSIS DATA - ADDED BY INTEGRATION
+// OUTSTANDING ANALYSIS DATA - ADDED BY INTEGRATION
 // ========================================================================
 // This will be automatically populated by Step 2C Updated script
-const portfolioAnalysisData = [
+const OutstandingAnalysisData = [
   {
     "period": "2024-01",
     "outstanding": 19280428431352.184,
-    "booking": 353024391939.2,
+    "Disburse": 353024391939.2,
     "growth": 0.0,
     "relending": 353024391939.2
   },
   {
     "period": "2024-02",
     "outstanding": 19428543944714.96,
-    "booking": 337639865435.7,
+    "Disburse": 337639865435.7,
     "growth": 148115513362.77734,
     "relending": 189524352072.92267
   },
   {
     "period": "2024-03",
     "outstanding": 19742039128498.82,
-    "booking": 701498112734.99,
+    "Disburse": 701498112734.99,
     "growth": 313495183783.8594,
     "relending": 388002928951.1306
   },
   {
     "period": "2024-04",
     "outstanding": 19898577055340.094,
-    "booking": 354746938373.06,
+    "Disburse": 354746938373.06,
     "growth": 156537926841.27344,
     "relending": 198209011531.78656
   },
   {
     "period": "2024-05",
     "outstanding": 20142542258916.812,
-    "booking": 398030192030.36,
+    "Disburse": 398030192030.36,
     "growth": 243965203576.71875,
     "relending": 154064988453.64124
   },
   {
     "period": "2024-06",
     "outstanding": 20411915728853.223,
-    "booking": 441992262611.71,
+    "Disburse": 441992262611.71,
     "growth": 269373469936.41016,
     "relending": 172618792675.29987
   },
   {
     "period": "2024-07",
     "outstanding": 20743907741766.293,
-    "booking": 475246702457.72,
+    "Disburse": 475246702457.72,
     "growth": 331992012913.0703,
     "relending": 143254689544.64966
   },
   {
     "period": "2024-08",
     "outstanding": 21026585751070.867,
-    "booking": 486075289453.0499,
+    "Disburse": 486075289453.0499,
     "growth": 282678009304.5742,
     "relending": 203397280148.4757
   },
   {
     "period": "2024-09",
     "outstanding": 21193770261768.5,
-    "booking": 320314403672.82,
+    "Disburse": 320314403672.82,
     "growth": 167184510697.6328,
     "relending": 153129892975.1872
   },
   {
     "period": "2024-10",
     "outstanding": 21413006471064.36,
-    "booking": 386897650718.81,
+    "Disburse": 386897650718.81,
     "growth": 219236209295.85938,
     "relending": 167661441422.95062
   },
   {
     "period": "2024-11",
     "outstanding": 21331008069421.406,
-    "booking": 297790763795.0,
+    "Disburse": 297790763795.0,
     "growth": -81998401642.95312,
     "relending": 379789165437.9531
   },
   {
     "period": "2024-12",
     "outstanding": 21252873620217.12,
-    "booking": 65230804725.47,
+    "Disburse": 65230804725.47,
     "growth": -78134449204.28516,
     "relending": 143365253929.75516
   },
   {
     "period": "2025-01",
     "outstanding": 21160011363928.906,
-    "booking": 48590197756.04,
+    "Disburse": 48590197756.04,
     "growth": -92862256288.21484,
     "relending": 141452454044.25485
   },
   {
     "period": "2025-02",
     "outstanding": 21075901611301.05,
-    "booking": 72116983095.71999,
+    "Disburse": 72116983095.71999,
     "growth": -84109752627.85547,
     "relending": 156226735723.57544
   },
   {
     "period": "2025-03",
     "outstanding": 21009080930672.426,
-    "booking": 94297178444.81,
+    "Disburse": 94297178444.81,
     "growth": -66820680628.625,
     "relending": 161117859073.435
   },
   {
     "period": "2025-04",
     "outstanding": 20934918656177.934,
-    "booking": 83025789489.11,
+    "Disburse": 83025789489.11,
     "growth": -74162274494.49219,
     "relending": 157188063983.60217
   },
   {
     "period": "2025-05",
     "outstanding": 20869272851269.816,
-    "booking": 94975445582.34999,
+    "Disburse": 94975445582.34999,
     "growth": -65645804908.11719,
     "relending": 160621250490.46716
   },
   {
     "period": "2025-06",
     "outstanding": 20806884549138.664,
-    "booking": 99940424127.81,
+    "Disburse": 99940424127.81,
     "growth": -62388302131.15234,
     "relending": 162328726258.96234
   },
   {
     "period": "2025-07",
     "outstanding": 20723863469998.312,
-    "booking": 90512778395.67,
+    "Disburse": 90512778395.67,
     "growth": -83021079140.35156,
     "relending": 173533857536.02155
   },
   {
     "period": "2025-08",
     "outstanding": 20651290048926.438,
-    "booking": 91594653279.1,
+    "Disburse": 91594653279.1,
     "growth": -72573421071.875,
     "relending": 164168074350.975
   },
   {
     "period": "2025-09",
     "outstanding": 20518923923721.4,
-    "booking": 91797348606.35,
+    "Disburse": 91797348606.35,
     "growth": -132366125205.03906,
     "relending": 224163473811.38907
   },
   {
     "period": "2025-10",
     "outstanding": 20352694166392.293,
-    "booking": 87184645669.67,
+    "Disburse": 87184645669.67,
     "growth": -166229757329.10547,
     "relending": 253414402998.77545
   },
   {
     "period": "2025-11",
     "outstanding": 20138659229166.46,
-    "booking": 49766327722.54001,
+    "Disburse": 49766327722.54001,
     "growth": -214034937225.83203,
     "relending": 263801264948.37204
   },
   {
     "period": "2025-12",
     "outstanding": 19955393817230.312,
-    "booking": 52942179929.16,
+    "Disburse": 52942179929.16,
     "growth": -183265411936.14844,
     "relending": 236207591865.30844
   },
   {
     "period": "2026-01",
     "outstanding": 19826117128642.918,
-    "booking": 25634321528.83,
+    "Disburse": 25634321528.83,
     "growth": -129276688587.39453,
     "relending": 154911010116.22455
   },
   {
     "period": "2026-02",
     "outstanding": 19818279888316.06,
-    "booking": 471882488.28999996,
+    "Disburse": 471882488.28999996,
     "growth": -7837240326.859375,
     "relending": 8309122815.149375
   }
@@ -5216,16 +5216,16 @@ updateAllCharts(selectedPeriod, previousPeriod, currentData, previousData);
 }
 
 function updateKPICards(current, previous) {
-document.getElementById('totalPortfolio').textContent = formatCurrency(current.portfolio);
-const portfolioChange = calculateChange(current.portfolio, previous?.portfolio);
-updateChangeElement('portfolioChange', portfolioChange, formatCurrency(portfolioChange.absolute), false);
+document.getElementById('totalOutstanding').textContent = formatCurrency(current.Outstanding);
+const OutstandingChange = calculateChange(current.Outstanding, previous?.Outstanding);
+updateChangeElement('OutstandingChange', OutstandingChange, formatCurrency(OutstandingChange.absolute), false);
 
 document.getElementById('nplRatio').textContent = (current.npl_ratio * 100).toFixed(2) + '%';
 const nplChange = calculateChange(current.npl_ratio, previous?.npl_ratio);
 updateChangeElement('nplChange', nplChange, (nplChange.percent).toFixed(2) + '% dari periode lalu', true);
 
-const smRatio = (current.special_mention / current.portfolio) * 100;
-const prevSmRatio = previous ? (previous.special_mention / previous.portfolio) * 100 : 0;
+const smRatio = (current.special_mention / current.Outstanding) * 100;
+const prevSmRatio = previous ? (previous.special_mention / previous.Outstanding) * 100 : 0;
 document.getElementById('smRatio').textContent = smRatio.toFixed(2) + '%';
 const smChange = calculateChange(smRatio, prevSmRatio);
 updateChangeElement('smChange', smChange, (smChange.percent).toFixed(2) + '% dari periode lalu', true);
@@ -5264,7 +5264,7 @@ type: 'line',
 data: {
 labels: last6Months.map(d => d.period),
 datasets: [{
-data: last6Months.map(d => d.portfolio),
+data: last6Months.map(d => d.Outstanding),
 borderColor: '#3b82f6',
 borderWidth: 2,
 fill: false,
@@ -5314,7 +5314,7 @@ type: 'line',
 data: {
 labels: last6Months.map(d => d.period),
 datasets: [{
-data: last6Months.map(d => (d.special_mention / d.portfolio) * 100),
+data: last6Months.map(d => (d.special_mention / d.Outstanding) * 100),
 borderColor: '#f59e0b',
 borderWidth: 2,
 fill: false,
@@ -5716,7 +5716,7 @@ if (charts.interest) charts.interest.destroy();
 charts.interest = new Chart(document.getElementById('interestChart'), {
 type: 'doughnut',
 data: {
-labels: ['Existing Portfolio', 'New Disbursement'],
+labels: ['Existing Outstanding', 'New Disbursement'],
 datasets: [{
 data: [interestFromExisting, interestFromNew],
 backgroundColor: ['#8b5cf6', '#3b82f6'],
@@ -5765,8 +5765,8 @@ type: 'bar',
 data: {
 labels: ageData.map(d => d.age_group),
 datasets: [{
-label: 'Portfolio',
-data: ageData.map(d => d.portfolio / 1e12),
+label: 'Outstanding',
+data: ageData.map(d => d.Outstanding / 1e12),
 backgroundColor: '#3b82f6',
 borderRadius: 6
 }]
@@ -5811,7 +5811,7 @@ tbody.innerHTML = ageData.map(d => `
 <tr>
 <td>${d.age_group}</td>
 <td>${d.debitur.toLocaleString('id-ID')}</td>
-<td>${formatCurrency(d.portfolio)}</td>
+<td>${formatCurrency(d.Outstanding)}</td>
 <td>${formatCurrency(d.avg_Porto)}</td>
 </tr>
 `).join('');
@@ -5843,7 +5843,7 @@ fill: true
 },
 {
 label: 'SM Ratio',
-data: last6Months.map(d => (d.special_mention / d.portfolio) * 100),
+data: last6Months.map(d => (d.special_mention / d.Outstanding) * 100),
 borderColor: '#f59e0b',
 backgroundColor: 'rgba(245, 158, 11, 0.1)',
 tension: 0.4,
@@ -5885,17 +5885,17 @@ callback: (val) => val.toFixed(2) + '%'
 
 const currentData = getDataByPeriod(period);
 const tbody = document.getElementById('qualityTableBody');
-const currentPortfolio = currentData.portfolio - currentData.special_mention - currentData.npl;
+const currentOutstanding = currentData.Outstanding - currentData.special_mention - currentData.npl;
 tbody.innerHTML = `
 <tr>
 <td>Current (Kol 1)</td>
-<td>${formatCurrency(currentPortfolio)}</td>
-<td>${((currentPortfolio / currentData.portfolio) * 100).toFixed(2)}%</td>
+<td>${formatCurrency(currentOutstanding)}</td>
+<td>${((currentOutstanding / currentData.Outstanding) * 100).toFixed(2)}%</td>
 </tr>
 <tr style="background: #fff7ed;">
 <td>Special Mention (Kol 2)</td>
 <td>${formatCurrency(currentData.special_mention)}</td>
-<td>${((currentData.special_mention / currentData.portfolio) * 100).toFixed(2)}%</td>
+<td>${((currentData.special_mention / currentData.Outstanding) * 100).toFixed(2)}%</td>
 </tr>
 <tr style="background: #fef2f2;">
 <td>NPL (Kol 3-5)</td>
@@ -5918,22 +5918,22 @@ const previous = summaryData[currentIndex + 1];
 if (!previous) return;
 
 const lost = getLostDataByPeriod(period);
-const lostAmount = lost.lost_portfolio || 0;
+const lostAmount = lost.lost_Outstanding || 0;
 
 	const data = [
-	previous.portfolio / 1e12,
+	previous.Outstanding / 1e12,
 	current.new_disburse / 1e12,
 	-lostAmount / 1e12,
-	current.portfolio / 1e12
+	current.Outstanding / 1e12
 	];
 
 if (charts.waterfall) charts.waterfall.destroy();
 charts.waterfall = new Chart(document.getElementById('waterfallChart'), {
 type: 'bar',
 data: {
-labels: ['Opening Balance', 'New Disburse', 'Lost Portfolio', 'Closing Balance'],
+labels: ['Opening Balance', 'New Disburse', 'Lost Outstanding', 'Closing Balance'],
 datasets: [{
-label: 'Portfolio Movement',
+label: 'Outstanding Movement',
 data: data,
 backgroundColor: ['#8b5cf6', '#10b981', '#ef4444', '#3b82f6'],
 borderRadius: 8
@@ -5992,8 +5992,8 @@ return (val * 1000).toFixed(0) + ' M';
 
 function updateLostBreakdown(period) {
 const lost = getLostDataByPeriod(period);
-if (!lost.lost_portfolio) {
-document.getElementById('lostBreakdown').innerHTML = '<p style="grid-column: 1/-1; text-align:center; color:#6b7280;">Tidak ada data lost portfolio untuk periode ini</p>';
+if (!lost.lost_Outstanding) {
+document.getElementById('lostBreakdown').innerHTML = '<p style="grid-column: 1/-1; text-align:center; color:#6b7280;">Tidak ada data lost Outstanding untuk periode ini</p>';
 document.getElementById('financialImpact').textContent = 'Data tidak tersedia';
 return;
 }
@@ -6010,7 +6010,7 @@ const breakdown = [
 
 const container = document.getElementById('lostBreakdown');
 container.innerHTML = breakdown.map(item => {
-const pct = (item.value / lost.lost_portfolio * 100).toFixed(1);
+const pct = (item.value / lost.lost_Outstanding * 100).toFixed(1);
 return `
 <div class="lost-item ${item.class}">
 <div class="lost-label">${item.label}</div>
@@ -6020,20 +6020,20 @@ return `
 `;
 }).join('');
 
-const pasawayPct = ((lost.passaway / lost.lost_portfolio) * 100).toFixed(1);
-const impact = `Total lost portfolio ${formatCurrency(lost.lost_portfolio)} (${lost.lost_count} loan) dengan direct cost impact ${formatCurrency(lost.direct_cost)}`;
+const pasawayPct = ((lost.passaway / lost.lost_Outstanding) * 100).toFixed(1);
+const impact = `Total lost Outstanding ${formatCurrency(lost.lost_Outstanding)} (${lost.lost_count} loan) dengan direct cost impact ${formatCurrency(lost.direct_cost)}`;
 document.getElementById('financialImpact').textContent = impact;
 }
 // ========================================================================
-// PORTFOLIO ANALYSIS FUNCTIONS - ADDED BY INTEGRATION
+// OUTSTANDING ANALYSIS FUNCTIONS - ADDED BY INTEGRATION
 // ========================================================================
 
-function formatCurrencyPortfolio(value) {
+function formatCurrencyOutstanding(value) {
     // Format number dengan separator ribuan tanpa desimal
     return new Intl.NumberFormat('id-ID').format(Math.round(value));
 }
 
-function formatMonthPortfolio(period) {
+function formatMonthOutstanding(period) {
     // Convert "2025-07" to "Juli 2025"
     const monthNames = {
         '01': 'Januari', '02': 'Februari', '03': 'Maret',
@@ -6046,12 +6046,12 @@ function formatMonthPortfolio(period) {
     return `${monthNames[month]} ${year}`;
 }
 
-function renderPortfolioAnalysisTable() {
+function renderOutstandingAnalysisTable() {
     // Get the table elements
-    const thead = document.querySelector('.portfolio-analysis-table thead tr');
-    const tbody = document.getElementById('portfolioAnalysisTableBody');
+    const thead = document.querySelector('.Outstanding-analysis-table thead tr');
+    const tbody = document.getElementById('OutstandingAnalysisTableBody');
     
-    if (!portfolioAnalysisData || portfolioAnalysisData.length === 0) {
+    if (!OutstandingAnalysisData || OutstandingAnalysisData.length === 0) {
         tbody.innerHTML = '<tr><td colspan="100%" style="text-align: center; padding: 24px; color: #718096;">No data available</td></tr>';
         return;
     }
@@ -6060,7 +6060,7 @@ function renderPortfolioAnalysisTable() {
 const selectedPeriod = document.getElementById('monthSelector').value;
 
 // Sort data berurutan kronologis
-const sorted = [...portfolioAnalysisData].sort((a, b) => a.period.localeCompare(b.period));
+const sorted = [...OutstandingAnalysisData].sort((a, b) => a.period.localeCompare(b.period));
 
 // Cari index periode yang dipilih
 const selectedIdx = sorted.findIndex(d => d.period === selectedPeriod);
@@ -6076,7 +6076,7 @@ const displayData = sorted.slice(startIdx, selectedIdx + 1);
     displayData.forEach(item => {
         const th = document.createElement('th');
         th.className = 'period-header';
-        th.textContent = formatMonthPortfolio(item.period);
+        th.textContent = formatMonthOutstanding(item.period);
         thead.appendChild(th);
     });
     
@@ -6086,25 +6086,25 @@ const displayData = sorted.slice(startIdx, selectedIdx + 1);
             label: 'Outstanding', 
             key: 'outstanding', 
             className: 'row-outstanding',
-            tooltip: 'Portfolio bulan berjalan'
+            tooltip: 'Outstanding bulan berjalan'
         },
         { 
-            label: 'Booking', 
-            key: 'booking', 
-            className: 'row-booking',
+            label: 'Disburse', 
+            key: 'Disburse', 
+            className: 'row-Disburse',
             tooltip: 'New Disburse bulan berjalan'
         },
         { 
             label: 'Relending', 
             key: 'relending', 
             className: 'row-relending',
-            tooltip: 'Booking - Growth (untuk maintain portfolio)'
+            tooltip: 'Disburse - Growth (untuk maintain Outstanding)'
         },
         { 
             label: 'Growth', 
             key: 'growth', 
             className: 'row-growth',
-            tooltip: 'Portfolio bulan ini - Portfolio bulan sebelumnya'
+            tooltip: 'Outstanding bulan ini - Outstanding bulan sebelumnya'
         }
     ];
     
@@ -6127,7 +6127,7 @@ const displayData = sorted.slice(startIdx, selectedIdx + 1);
             const td = document.createElement('td');
             td.className = 'number-cell period-cell';
             const value = item[row.key];
-            td.textContent = formatCurrencyPortfolio(value);
+            td.textContent = formatCurrencyOutstanding(value);
             
             // Add color for positive/negative values
             if (row.key === 'growth') {
@@ -6154,7 +6154,7 @@ updateAgeChart(period);
 updateQualityChart(period);
 updateWaterfallChart(period);
 updateLostBreakdown(period);
-renderPortfolioAnalysisTable();  // Portfolio Analysis Table
+renderOutstandingAnalysisTable();  // Outstanding Analysis Table
 }
 
 // ========================================
@@ -6212,24 +6212,24 @@ function togglePengantar() {
     }
 
     // ================================================
-    // 1. Download Portfolio Analysis
+    // 1. Download Outstanding Analysis
     // ================================================
-    function downloadPortfolioAnalysis() {
+    function downloadOutstandingAnalysis() {
         const selectedPeriod = document.getElementById('monthSelector').value;
-        const sorted = [...portfolioAnalysisData].sort((a, b) => a.period.localeCompare(b.period));
+        const sorted = [...OutstandingAnalysisData].sort((a, b) => a.period.localeCompare(b.period));
         const idx = sorted.findIndex(d => d.period === selectedPeriod);
         const startIdx = Math.max(0, idx - 5);
         const slice = sorted.slice(startIdx, idx + 1);
 
-        const header = ['Periode', 'Outstanding', 'Booking', 'Relending', 'Growth'];
+        const header = ['Periode', 'Outstanding', 'Disburse', 'Relending', 'Growth'];
         const rows = slice.map(d => [
             d.period,
             d.outstanding,
-            d.booking,
+            d.Disburse,
             d.relending,
             d.growth
         ]);
-        exportToExcel([header, ...rows], 'Portfolio Analysis', 'Portfolio_Analysis.xlsx');
+        exportToExcel([header, ...rows], 'Outstanding Analysis', 'Outstanding_Analysis.xlsx');
     }
 
     // ================================================
@@ -6261,7 +6261,7 @@ function togglePengantar() {
         const header = ['Kategori', 'Nilai (Rp)'];
         const rows = [
             ['Total Interest Income', current.interest_income || 0],
-            ['Dari Existing Portfolio', interestFromExisting],
+            ['Dari Existing Outstanding', interestFromExisting],
             ['Dari New Disbursement', interestFromNew]
         ];
         exportToExcel([header, ...rows], 'Interest Income', 'Interest_Income.xlsx');
@@ -6276,32 +6276,32 @@ function togglePengantar() {
         const AGE_ORDER = ["40-45 th", "46-50 th", "51-55 th", "56-60 th", "61-65 th", "> 65 th"];
         const sorted = [...raw].sort((a, b) => AGE_ORDER.indexOf(a.age_group) - AGE_ORDER.indexOf(b.age_group));
 
-        const header = ['Kelompok Usia', 'Jumlah Debitur', 'Portfolio (Rp)', 'Avg Porto (Rp)'];
+        const header = ['Kelompok Usia', 'Jumlah Debitur', 'Outstanding (Rp)', 'Avg Porto (Rp)'];
         const rows = sorted.map(d => [
             d.age_group,
             d.debitur,
-            d.portfolio,
+            d.Outstanding,
             d.avg_Porto
         ]);
         exportToExcel([header, ...rows], 'Age Distribution', 'Age_Distribution.xlsx');
     }
 
     // ================================================
-    // 5. Download Portfolio Quality
+    // 5. Download Outstanding Quality
     // ================================================
-    function downloadPortfolioQuality() {
+    function downloadOutstandingQuality() {
         const period = document.getElementById('monthSelector').value;
         const current = summaryData.find(d => d.period === period) || {};
-        const currentPortfolio = (current.portfolio || 0) - (current.special_mention || 0) - (current.npl || 0);
+        const currentOutstanding = (current.Outstanding || 0) - (current.special_mention || 0) - (current.npl || 0);
 
         const header = ['Kategori', 'Outstanding (Rp)', 'Ratio (%)'];
         const rows = [
-            ['Current (Kol 1)', currentPortfolio, ((currentPortfolio / (current.portfolio || 1)) * 100).toFixed(2)],
-            ['Special Mention (Kol 2)', current.special_mention || 0, (((current.special_mention || 0) / (current.portfolio || 1)) * 100).toFixed(2)],
+            ['Current (Kol 1)', currentOutstanding, ((currentOutstanding / (current.Outstanding || 1)) * 100).toFixed(2)],
+            ['Special Mention (Kol 2)', current.special_mention || 0, (((current.special_mention || 0) / (current.Outstanding || 1)) * 100).toFixed(2)],
             ['NPL (Kol 3-5)', current.npl || 0, ((current.npl_ratio || 0) * 100).toFixed(2)],
             ['CKPN', current.ckpn || 0, ((current.coverage_ratio || 0) * 100).toFixed(2)]
         ];
-        exportToExcel([header, ...rows], 'Portfolio Quality', 'Portfolio_Quality.xlsx');
+        exportToExcel([header, ...rows], 'Outstanding Quality', 'Outstanding_Quality.xlsx');
     }
 
     // ================================================
@@ -6317,15 +6317,15 @@ function togglePengantar() {
         // Sheet 1: Movement
         const mvHeader = ['Kategori', 'Nilai (Rp)'];
         const mvRows = [
-            ['Opening Balance (Portfolio Bulan Sebelumnya)', previous.portfolio || 0],
+            ['Opening Balance (Outstanding Bulan Sebelumnya)', previous.Outstanding || 0],
             ['New Disburse', current.new_disburse || 0],
-            ['Lost Portfolio', lost.lost_portfolio || 0],
-            ['Closing Balance (Portfolio Bulan Ini)', current.portfolio || 0]
+            ['Lost Outstanding', lost.lost_Outstanding || 0],
+            ['Closing Balance (Outstanding Bulan Ini)', current.Outstanding || 0]
         ];
 
         // Sheet 2: Lost Breakdown
         const lostHeader = ['Kategori Lost', 'Nilai (Rp)', '% dari Total Lost'];
-        const totalLost = lost.lost_portfolio || 1;
+        const totalLost = lost.lost_Outstanding || 1;
         const lostRows = [
             ['Lunas Normal', lost.lunas || 0, (((lost.lunas || 0) / totalLost) * 100).toFixed(1)],
             ['Pelunasan', lost.pelunasan || 0, (((lost.pelunasan || 0) / totalLost) * 100).toFixed(1)],
