@@ -1047,7 +1047,10 @@ function checkPassword() {
 <div class="dashboard-container">
 <div class="header">
 <h1>📊 Dashboard Portfolio KUPEN</h1>
-
+<div style="color: #6b7280; font-size: 13px; margin-top: 8px;">
+    <span style="font-weight: 500;">⏰ Terakhir diperbarui:</span> 
+    <span id="lastUpdateTime">Loading...</span>
+</div>
 <!-- KATA PENGANTAR - BAGIAN BARU -->
 <div class="pengantar-section">
     <button class="pengantar-toggle" onclick="togglePengantar()">
@@ -5164,7 +5167,23 @@ const OutstandingAnalysisData = [
 ];
 
 let charts = {};
+// Register the datalabels plugin globally
+Chart.register(ChartDataLabels);
 
+// TAMBAHKAN FUNGSI INI
+function extractAndDisplayLastUpdate() {
+    // Ambil dari HTML comment yang ada di head
+    const htmlContent = document.documentElement.innerHTML;
+    const match = htmlContent.match(/Last Updated:\s*([^\n]+)/);
+    
+    if (match && match[1]) {
+        const lastUpdate = match[1].trim();
+        document.getElementById('lastUpdateTime').textContent = lastUpdate;
+    } else {
+        document.getElementById('lastUpdateTime').textContent = 'Tidak tersedia';
+    }
+}
+// AKHIR PENAMBAHAN
 // Register the datalabels plugin globally
 Chart.register(ChartDataLabels);
 
@@ -6381,6 +6400,7 @@ function togglePengantar() {
     }
 
 document.addEventListener('DOMContentLoaded', function() {
+extractAndDisplayLastUpdate();
     updateDashboard();
 });
 </script>
