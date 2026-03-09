@@ -27,11 +27,12 @@
 
 
 
+
 <!--
 ==============================================================================
 DASHBOARD AUTO-UPDATE
 ==============================================================================
-Last Updated: 2026-03-06 09:46:33 (Jakarta Time)
+Last Updated: 2026-03-09 10:55:36 (Jakarta Time)
 Latest Period: 2026-03
 Total Periods: 27
 Updated by: KUPEN Dashboard Auto-Update Script (Step 2C - With Outstanding Analysis)
@@ -39,6 +40,7 @@ Data Source: Google Drive (/content/drive/My Drive/KUPEN_Dashboard_Data/)
 New Feature: Outstanding Analysis Table (Outstanding, Disburse, Relending, Growth)
 ==============================================================================
 -->
+
 
 
 
@@ -1344,19 +1346,19 @@ Loading...
 const summaryData = [
   {
     "period": "2026-03",
-    "Outstanding": 19693317307037.867,
-    "balance": 18255967654180.06,
-    "docf": 1437349652857.81,
-    "interest_income": 161311136418.63,
-    "amortize_direct_cost": 14031254662.683968,
-    "new_disburse": 3419285331.6499996,
-    "new_disburse_count": 87,
-    "new_interest_income": 33695447.92,
-    "special_mention": 198593133150.40997,
-    "npl": 93719737782.29999,
-    "ckpn": 88657937794.54999,
-    "npl_ratio": 0.004758961444693071,
-    "coverage_ratio": 0.9459900325424728
+    "Outstanding": 19687996627511.383,
+    "balance": 18252649653488.45,
+    "docf": 1435346974022.9304,
+    "interest_income": 161269878187.89,
+    "amortize_direct_cost": 14030845354.594093,
+    "new_disburse": 4813143385.0199995,
+    "new_disburse_count": 111,
+    "new_interest_income": 47501947.92,
+    "special_mention": 191680795131.56998,
+    "npl": 95427395265.34,
+    "ckpn": 88657431339.19,
+    "npl_ratio": 0.004846983523554285,
+    "coverage_ratio": 0.9290563898624099
   },
   {
     "period": "2026-02",
@@ -1779,13 +1781,13 @@ const summaryData = [
 const lostData = [
   {
     "period": "2026-03",
-    "lost_Outstanding": 5301859380.66,
-    "lost_count": 188,
-    "direct_cost": 91781526.51999998,
-    "lunas": 69529728.22999999,
-    "pelunasan": 5227019419.650001,
-    "pelunasan_jf": 5310232.78,
-    "rehab": 0.0,
+    "lost_Outstanding": 5576603313.66,
+    "lost_count": 217,
+    "direct_cost": 93926754.24999997,
+    "lunas": 101587967.71,
+    "pelunasan": 5463947034.390001,
+    "pelunasan_jf": 9921793.46,
+    "rehab": 1146518.1,
     "restruct": 0.0,
     "passaway": 0.0,
     "writeoff": 0.0
@@ -2164,25 +2166,11 @@ const ageDistribution = {
   ],
   "2024-02": [
     {
-      "age_group": "40-45 th",
-      "debitur": 1478,
-      "Outstanding": 185227057510.67,
+      "age_group": "> 65 th",
+      "debitur": 24507,
+      "Outstanding": 2423475776248.15,
       "period": "2024-02",
-      "avg_Porto": 125322772.33468878
-    },
-    {
-      "age_group": "46-50 th",
-      "debitur": 4293,
-      "Outstanding": 635528675675.96,
-      "period": "2024-02",
-      "avg_Porto": 148038359.11389703
-    },
-    {
-      "age_group": "51-55 th",
-      "debitur": 13218,
-      "Outstanding": 2250314600535.29,
-      "period": "2024-02",
-      "avg_Porto": 170246224.8854055
+      "avg_Porto": 98889124.58677724
     },
     {
       "age_group": "56-60 th",
@@ -2199,11 +2187,25 @@ const ageDistribution = {
       "avg_Porto": 198567869.87592128
     },
     {
-      "age_group": "> 65 th",
-      "debitur": 24507,
-      "Outstanding": 2423475776248.15,
+      "age_group": "46-50 th",
+      "debitur": 4293,
+      "Outstanding": 635528675675.96,
       "period": "2024-02",
-      "avg_Porto": 98889124.58677724
+      "avg_Porto": 148038359.11389703
+    },
+    {
+      "age_group": "40-45 th",
+      "debitur": 1478,
+      "Outstanding": 185227057510.67,
+      "period": "2024-02",
+      "avg_Porto": 125322772.33468878
+    },
+    {
+      "age_group": "51-55 th",
+      "debitur": 13218,
+      "Outstanding": 2250314600535.29,
+      "period": "2024-02",
+      "avg_Porto": 170246224.8854055
     }
   ],
   "2024-03": [
@@ -2252,6 +2254,27 @@ const ageDistribution = {
   ],
   "2024-04": [
     {
+      "age_group": "56-60 th",
+      "debitur": 28919,
+      "Outstanding": 5703283027396.28,
+      "period": "2024-04",
+      "avg_Porto": 197215776.04330304
+    },
+    {
+      "age_group": "> 65 th",
+      "debitur": 24819,
+      "Outstanding": 2497997403704.33,
+      "period": "2024-04",
+      "avg_Porto": 100648591.95391957
+    },
+    {
+      "age_group": "61-65 th",
+      "debitur": 42538,
+      "Outstanding": 8601329764467.95,
+      "period": "2024-04",
+      "avg_Porto": 202203436.09168157
+    },
+    {
       "age_group": "51-55 th",
       "debitur": 13186,
       "Outstanding": 2267635507025.01,
@@ -2271,27 +2294,6 @@ const ageDistribution = {
       "Outstanding": 186726359808.14,
       "period": "2024-04",
       "avg_Porto": 127024734.56336056
-    },
-    {
-      "age_group": "61-65 th",
-      "debitur": 42538,
-      "Outstanding": 8601329764467.95,
-      "period": "2024-04",
-      "avg_Porto": 202203436.09168157
-    },
-    {
-      "age_group": "56-60 th",
-      "debitur": 28919,
-      "Outstanding": 5703283027396.28,
-      "period": "2024-04",
-      "avg_Porto": 197215776.04330304
-    },
-    {
-      "age_group": "> 65 th",
-      "debitur": 24819,
-      "Outstanding": 2497997403704.33,
-      "period": "2024-04",
-      "avg_Porto": 100648591.95391957
     }
   ],
   "2024-05": [
@@ -2384,25 +2386,11 @@ const ageDistribution = {
   ],
   "2024-07": [
     {
-      "age_group": "46-50 th",
-      "debitur": 4370,
-      "Outstanding": 660090304040.2,
+      "age_group": "56-60 th",
+      "debitur": 28785,
+      "Outstanding": 5797269465101.07,
       "period": "2024-07",
-      "avg_Porto": 151050412.82384437
-    },
-    {
-      "age_group": "51-55 th",
-      "debitur": 13032,
-      "Outstanding": 2281009256292.39,
-      "period": "2024-07",
-      "avg_Porto": 175031403.95122698
-    },
-    {
-      "age_group": "40-45 th",
-      "debitur": 1445,
-      "Outstanding": 185569672067.94,
-      "period": "2024-07",
-      "avg_Porto": 128421918.38611765
+      "avg_Porto": 201398973.9482741
     },
     {
       "age_group": "61-65 th",
@@ -2419,34 +2407,34 @@ const ageDistribution = {
       "avg_Porto": 104499557.14912777
     },
     {
-      "age_group": "56-60 th",
-      "debitur": 28785,
-      "Outstanding": 5797269465101.07,
+      "age_group": "51-55 th",
+      "debitur": 13032,
+      "Outstanding": 2281009256292.39,
       "period": "2024-07",
-      "avg_Porto": 201398973.9482741
+      "avg_Porto": 175031403.95122698
+    },
+    {
+      "age_group": "40-45 th",
+      "debitur": 1445,
+      "Outstanding": 185569672067.94,
+      "period": "2024-07",
+      "avg_Porto": 128421918.38611765
+    },
+    {
+      "age_group": "46-50 th",
+      "debitur": 4370,
+      "Outstanding": 660090304040.2,
+      "period": "2024-07",
+      "avg_Porto": 151050412.82384437
     }
   ],
   "2024-08": [
     {
-      "age_group": "40-45 th",
-      "debitur": 1416,
-      "Outstanding": 181470551974.5,
+      "age_group": "61-65 th",
+      "debitur": 43951,
+      "Outstanding": 9281721692409.3,
       "period": "2024-08",
-      "avg_Porto": 128157169.47351696
-    },
-    {
-      "age_group": "46-50 th",
-      "debitur": 4390,
-      "Outstanding": 666840062787.17,
-      "period": "2024-08",
-      "avg_Porto": 151899786.51188383
-    },
-    {
-      "age_group": "51-55 th",
-      "debitur": 13021,
-      "Outstanding": 2292438330282.6,
-      "period": "2024-08",
-      "avg_Porto": 176057010.23597267
+      "avg_Porto": 211183401.79766786
     },
     {
       "age_group": "56-60 th",
@@ -2456,18 +2444,32 @@ const ageDistribution = {
       "avg_Porto": 202726312.39416996
     },
     {
-      "age_group": "61-65 th",
-      "debitur": 43951,
-      "Outstanding": 9281721692409.3,
-      "period": "2024-08",
-      "avg_Porto": 211183401.79766786
-    },
-    {
       "age_group": "> 65 th",
       "debitur": 25829,
       "Outstanding": 2744919232801.0,
       "period": "2024-08",
       "avg_Porto": 106272764.44310659
+    },
+    {
+      "age_group": "46-50 th",
+      "debitur": 4390,
+      "Outstanding": 666840062787.17,
+      "period": "2024-08",
+      "avg_Porto": 151899786.51188383
+    },
+    {
+      "age_group": "40-45 th",
+      "debitur": 1416,
+      "Outstanding": 181470551974.5,
+      "period": "2024-08",
+      "avg_Porto": 128157169.47351696
+    },
+    {
+      "age_group": "51-55 th",
+      "debitur": 13021,
+      "Outstanding": 2292438330282.6,
+      "period": "2024-08",
+      "avg_Porto": 176057010.23597267
     }
   ],
   "2024-09": [
@@ -2516,25 +2518,11 @@ const ageDistribution = {
   ],
   "2024-10": [
     {
-      "age_group": "51-55 th",
-      "debitur": 12994,
-      "Outstanding": 2311978052292.09,
+      "age_group": "56-60 th",
+      "debitur": 28891,
+      "Outstanding": 5876493903845.85,
       "period": "2024-10",
-      "avg_Porto": 177926585.52347928
-    },
-    {
-      "age_group": "40-45 th",
-      "debitur": 1393,
-      "Outstanding": 179599875625.45,
-      "period": "2024-10",
-      "avg_Porto": 128930276.83090453
-    },
-    {
-      "age_group": "46-50 th",
-      "debitur": 4419,
-      "Outstanding": 678590135431.66,
-      "period": "2024-10",
-      "avg_Porto": 153561922.47831184
+      "avg_Porto": 203402232.66227716
     },
     {
       "age_group": "> 65 th",
@@ -2544,18 +2532,32 @@ const ageDistribution = {
       "avg_Porto": 109727127.08038436
     },
     {
-      "age_group": "56-60 th",
-      "debitur": 28891,
-      "Outstanding": 5876493903845.85,
-      "period": "2024-10",
-      "avg_Porto": 203402232.66227716
-    },
-    {
       "age_group": "61-65 th",
       "debitur": 44337,
       "Outstanding": 9477338974969.87,
       "period": "2024-10",
       "avg_Porto": 213756884.20438614
+    },
+    {
+      "age_group": "40-45 th",
+      "debitur": 1393,
+      "Outstanding": 179599875625.45,
+      "period": "2024-10",
+      "avg_Porto": 128930276.83090453
+    },
+    {
+      "age_group": "51-55 th",
+      "debitur": 12994,
+      "Outstanding": 2311978052292.09,
+      "period": "2024-10",
+      "avg_Porto": 177926585.52347928
+    },
+    {
+      "age_group": "46-50 th",
+      "debitur": 4419,
+      "Outstanding": 678590135431.66,
+      "period": "2024-10",
+      "avg_Porto": 153561922.47831184
     }
   ],
   "2024-11": [
@@ -2604,6 +2606,34 @@ const ageDistribution = {
   ],
   "2024-12": [
     {
+      "age_group": "61-65 th",
+      "debitur": 43927,
+      "Outstanding": 9450803069783.9,
+      "period": "2024-12",
+      "avg_Porto": 215147928.83155918
+    },
+    {
+      "age_group": "> 65 th",
+      "debitur": 26276,
+      "Outstanding": 2936450904042.1,
+      "period": "2024-12",
+      "avg_Porto": 111754106.56272264
+    },
+    {
+      "age_group": "56-60 th",
+      "debitur": 28202,
+      "Outstanding": 5710399800293.98,
+      "period": "2024-12",
+      "avg_Porto": 202482086.3872768
+    },
+    {
+      "age_group": "51-55 th",
+      "debitur": 12844,
+      "Outstanding": 2297796821236.53,
+      "period": "2024-12",
+      "avg_Porto": 178900406.51171985
+    },
+    {
       "age_group": "46-50 th",
       "debitur": 4422,
       "Outstanding": 680637004608.73,
@@ -2616,34 +2646,6 @@ const ageDistribution = {
       "Outstanding": 176786020251.88,
       "period": "2024-12",
       "avg_Porto": 129229546.96774854
-    },
-    {
-      "age_group": "51-55 th",
-      "debitur": 12844,
-      "Outstanding": 2297796821236.53,
-      "period": "2024-12",
-      "avg_Porto": 178900406.51171985
-    },
-    {
-      "age_group": "56-60 th",
-      "debitur": 28202,
-      "Outstanding": 5710399800293.98,
-      "period": "2024-12",
-      "avg_Porto": 202482086.3872768
-    },
-    {
-      "age_group": "> 65 th",
-      "debitur": 26276,
-      "Outstanding": 2936450904042.1,
-      "period": "2024-12",
-      "avg_Porto": 111754106.56272264
-    },
-    {
-      "age_group": "61-65 th",
-      "debitur": 43927,
-      "Outstanding": 9450803069783.9,
-      "period": "2024-12",
-      "avg_Porto": 215147928.83155918
     }
   ],
   "2025-01": [
@@ -2692,34 +2694,6 @@ const ageDistribution = {
   ],
   "2025-02": [
     {
-      "age_group": "46-50 th",
-      "debitur": 4390,
-      "Outstanding": 675110500152.48,
-      "period": "2025-02",
-      "avg_Porto": 153783713.01878816
-    },
-    {
-      "age_group": "40-45 th",
-      "debitur": 1324,
-      "Outstanding": 169846377001.77,
-      "period": "2025-02",
-      "avg_Porto": 128282762.08592899
-    },
-    {
-      "age_group": "51-55 th",
-      "debitur": 12572,
-      "Outstanding": 2240208572755.53,
-      "period": "2025-02",
-      "avg_Porto": 178190309.63693365
-    },
-    {
-      "age_group": "56-60 th",
-      "debitur": 27428,
-      "Outstanding": 5494638337278.75,
-      "period": "2025-02",
-      "avg_Porto": 200329529.5784873
-    },
-    {
       "age_group": "> 65 th",
       "debitur": 26913,
       "Outstanding": 3060535977784.65,
@@ -2732,6 +2706,34 @@ const ageDistribution = {
       "Outstanding": 9435561846327.87,
       "period": "2025-02",
       "avg_Porto": 215138899.3188898
+    },
+    {
+      "age_group": "56-60 th",
+      "debitur": 27428,
+      "Outstanding": 5494638337278.75,
+      "period": "2025-02",
+      "avg_Porto": 200329529.5784873
+    },
+    {
+      "age_group": "51-55 th",
+      "debitur": 12572,
+      "Outstanding": 2240208572755.53,
+      "period": "2025-02",
+      "avg_Porto": 178190309.63693365
+    },
+    {
+      "age_group": "40-45 th",
+      "debitur": 1324,
+      "Outstanding": 169846377001.77,
+      "period": "2025-02",
+      "avg_Porto": 128282762.08592899
+    },
+    {
+      "age_group": "46-50 th",
+      "debitur": 4390,
+      "Outstanding": 675110500152.48,
+      "period": "2025-02",
+      "avg_Porto": 153783713.01878816
     }
   ],
   "2025-03": [
@@ -2780,32 +2782,11 @@ const ageDistribution = {
   ],
   "2025-04": [
     {
-      "age_group": "51-55 th",
-      "debitur": 12325,
-      "Outstanding": 2183958706600.96,
+      "age_group": "56-60 th",
+      "debitur": 26829,
+      "Outstanding": 5319914659273.08,
       "period": "2025-04",
-      "avg_Porto": 177197460.9818223
-    },
-    {
-      "age_group": "40-45 th",
-      "debitur": 1282,
-      "Outstanding": 164243421698.62,
-      "period": "2025-04",
-      "avg_Porto": 128114993.52466458
-    },
-    {
-      "age_group": "46-50 th",
-      "debitur": 4351,
-      "Outstanding": 667198640746.88,
-      "period": "2025-04",
-      "avg_Porto": 153343746.43688348
-    },
-    {
-      "age_group": "61-65 th",
-      "debitur": 43870,
-      "Outstanding": 9438696174665.38,
-      "period": "2025-04",
-      "avg_Porto": 215151497.0290718
+      "avg_Porto": 198289711.1063804
     },
     {
       "age_group": "> 65 th",
@@ -2815,11 +2796,32 @@ const ageDistribution = {
       "avg_Porto": 115327898.90517403
     },
     {
-      "age_group": "56-60 th",
-      "debitur": 26829,
-      "Outstanding": 5319914659273.08,
+      "age_group": "61-65 th",
+      "debitur": 43870,
+      "Outstanding": 9438696174665.38,
       "period": "2025-04",
-      "avg_Porto": 198289711.1063804
+      "avg_Porto": 215151497.0290718
+    },
+    {
+      "age_group": "40-45 th",
+      "debitur": 1282,
+      "Outstanding": 164243421698.62,
+      "period": "2025-04",
+      "avg_Porto": 128114993.52466458
+    },
+    {
+      "age_group": "51-55 th",
+      "debitur": 12325,
+      "Outstanding": 2183958706600.96,
+      "period": "2025-04",
+      "avg_Porto": 177197460.9818223
+    },
+    {
+      "age_group": "46-50 th",
+      "debitur": 4351,
+      "Outstanding": 667198640746.88,
+      "period": "2025-04",
+      "avg_Porto": 153343746.43688348
     }
   ],
   "2025-05": [
@@ -2868,6 +2870,27 @@ const ageDistribution = {
   ],
   "2025-06": [
     {
+      "age_group": "61-65 th",
+      "debitur": 43769,
+      "Outstanding": 9411086949247.81,
+      "period": "2025-06",
+      "avg_Porto": 215017179.9503715
+    },
+    {
+      "age_group": "56-60 th",
+      "debitur": 26217,
+      "Outstanding": 5137079094533.28,
+      "period": "2025-06",
+      "avg_Porto": 195944581.55140865
+    },
+    {
+      "age_group": "> 65 th",
+      "debitur": 28171,
+      "Outstanding": 3316391139692.26,
+      "period": "2025-06",
+      "avg_Porto": 117723585.94626601
+    },
+    {
       "age_group": "40-45 th",
       "debitur": 1233,
       "Outstanding": 156607768788.01,
@@ -2887,27 +2910,6 @@ const ageDistribution = {
       "Outstanding": 661418005020.5,
       "period": "2025-06",
       "avg_Porto": 154104847.39527026
-    },
-    {
-      "age_group": "> 65 th",
-      "debitur": 28171,
-      "Outstanding": 3316391139692.26,
-      "period": "2025-06",
-      "avg_Porto": 117723585.94626601
-    },
-    {
-      "age_group": "61-65 th",
-      "debitur": 43769,
-      "Outstanding": 9411086949247.81,
-      "period": "2025-06",
-      "avg_Porto": 215017179.9503715
-    },
-    {
-      "age_group": "56-60 th",
-      "debitur": 26217,
-      "Outstanding": 5137079094533.28,
-      "period": "2025-06",
-      "avg_Porto": 195944581.55140865
     }
   ],
   "2025-07": [
@@ -2956,6 +2958,27 @@ const ageDistribution = {
   ],
   "2025-08": [
     {
+      "age_group": "61-65 th",
+      "debitur": 43532,
+      "Outstanding": 9372017514117.79,
+      "period": "2025-08",
+      "avg_Porto": 215290304.00895408
+    },
+    {
+      "age_group": "> 65 th",
+      "debitur": 28969,
+      "Outstanding": 3468325933138.52,
+      "period": "2025-08",
+      "avg_Porto": 119725428.32470986
+    },
+    {
+      "age_group": "56-60 th",
+      "debitur": 25566,
+      "Outstanding": 4947420967351.69,
+      "period": "2025-08",
+      "avg_Porto": 193515644.50253034
+    },
+    {
       "age_group": "46-50 th",
       "debitur": 4162,
       "Outstanding": 639445752554.53,
@@ -2975,58 +2998,9 @@ const ageDistribution = {
       "Outstanding": 2076011077029.68,
       "period": "2025-08",
       "avg_Porto": 176983041.5200068
-    },
-    {
-      "age_group": "56-60 th",
-      "debitur": 25566,
-      "Outstanding": 4947420967351.69,
-      "period": "2025-08",
-      "avg_Porto": 193515644.50253034
-    },
-    {
-      "age_group": "> 65 th",
-      "debitur": 28969,
-      "Outstanding": 3468325933138.52,
-      "period": "2025-08",
-      "avg_Porto": 119725428.32470986
-    },
-    {
-      "age_group": "61-65 th",
-      "debitur": 43532,
-      "Outstanding": 9372017514117.79,
-      "period": "2025-08",
-      "avg_Porto": 215290304.00895408
     }
   ],
   "2025-09": [
-    {
-      "age_group": "40-45 th",
-      "debitur": 1146,
-      "Outstanding": 145115698207.55,
-      "period": "2025-09",
-      "avg_Porto": 126628008.90711169
-    },
-    {
-      "age_group": "51-55 th",
-      "debitur": 11574,
-      "Outstanding": 2048169240814.56,
-      "period": "2025-09",
-      "avg_Porto": 176962954.96928978
-    },
-    {
-      "age_group": "46-50 th",
-      "debitur": 4117,
-      "Outstanding": 631713383794.34,
-      "period": "2025-09",
-      "avg_Porto": 153440219.5274083
-    },
-    {
-      "age_group": "> 65 th",
-      "debitur": 29143,
-      "Outstanding": 3535415670569.32,
-      "period": "2025-09",
-      "avg_Porto": 121312688.1436132
-    },
     {
       "age_group": "61-65 th",
       "debitur": 43240,
@@ -3040,6 +3014,34 @@ const ageDistribution = {
       "Outstanding": 4857314446906.32,
       "period": "2025-09",
       "avg_Porto": 192689402.05118695
+    },
+    {
+      "age_group": "> 65 th",
+      "debitur": 29143,
+      "Outstanding": 3535415670569.32,
+      "period": "2025-09",
+      "avg_Porto": 121312688.1436132
+    },
+    {
+      "age_group": "51-55 th",
+      "debitur": 11574,
+      "Outstanding": 2048169240814.56,
+      "period": "2025-09",
+      "avg_Porto": 176962954.96928978
+    },
+    {
+      "age_group": "40-45 th",
+      "debitur": 1146,
+      "Outstanding": 145115698207.55,
+      "period": "2025-09",
+      "avg_Porto": 126628008.90711169
+    },
+    {
+      "age_group": "46-50 th",
+      "debitur": 4117,
+      "Outstanding": 631713383794.34,
+      "period": "2025-09",
+      "avg_Porto": 153440219.5274083
     }
   ],
   "2025-10": [
@@ -3132,34 +3134,6 @@ const ageDistribution = {
   ],
   "2025-12": [
     {
-      "age_group": "46-50 th",
-      "debitur": 3972,
-      "Outstanding": 599216247693.34,
-      "period": "2025-12",
-      "avg_Porto": 150860082.50084087
-    },
-    {
-      "age_group": "40-45 th",
-      "debitur": 1051,
-      "Outstanding": 131024964299.53,
-      "period": "2025-12",
-      "avg_Porto": 124666949.85683158
-    },
-    {
-      "age_group": "51-55 th",
-      "debitur": 11066,
-      "Outstanding": 1942136767218.36,
-      "period": "2025-12",
-      "avg_Porto": 175504858.77628413
-    },
-    {
-      "age_group": "56-60 th",
-      "debitur": 24405,
-      "Outstanding": 4639069721036.17,
-      "period": "2025-12",
-      "avg_Porto": 190086856.01459414
-    },
-    {
       "age_group": "> 65 th",
       "debitur": 29312,
       "Outstanding": 3632411957157.86,
@@ -3172,6 +3146,34 @@ const ageDistribution = {
       "Outstanding": 9011534159825.06,
       "period": "2025-12",
       "avg_Porto": 214167696.3620282
+    },
+    {
+      "age_group": "56-60 th",
+      "debitur": 24405,
+      "Outstanding": 4639069721036.17,
+      "period": "2025-12",
+      "avg_Porto": 190086856.01459414
+    },
+    {
+      "age_group": "51-55 th",
+      "debitur": 11066,
+      "Outstanding": 1942136767218.36,
+      "period": "2025-12",
+      "avg_Porto": 175504858.77628413
+    },
+    {
+      "age_group": "40-45 th",
+      "debitur": 1051,
+      "Outstanding": 131024964299.53,
+      "period": "2025-12",
+      "avg_Porto": 124666949.85683158
+    },
+    {
+      "age_group": "46-50 th",
+      "debitur": 3972,
+      "Outstanding": 599216247693.34,
+      "period": "2025-12",
+      "avg_Porto": 150860082.50084087
     }
   ],
   "2026-01": [
@@ -3265,62 +3267,69 @@ const ageDistribution = {
   "2026-03": [
     {
       "age_group": "56-60 th",
-      "debitur": 23651,
-      "Outstanding": 4446678013504.87,
+      "debitur": 23652,
+      "Outstanding": 4446056498011.72,
       "period": "2026-03",
-      "avg_Porto": 188012262.208992
+      "avg_Porto": 187978035.600022
     },
     {
       "age_group": "51-55 th",
-      "debitur": 10540,
-      "Outstanding": 1824092396288.25,
+      "debitur": 10543,
+      "Outstanding": 1824548669411.29,
       "period": "2026-03",
-      "avg_Porto": 173063794.7142552
+      "avg_Porto": 173057826.93837523
     },
     {
       "age_group": "61-65 th",
-      "debitur": 41271,
-      "Outstanding": 8806241819715.05,
+      "debitur": 41272,
+      "Outstanding": 8803822314350.98,
       "period": "2026-03",
-      "avg_Porto": 213376022.38169783
+      "avg_Porto": 213312228.97729647
     },
     {
       "age_group": "40-45 th",
       "debitur": 965,
-      "Outstanding": 117761868636.43,
+      "Outstanding": 117786303412.42,
       "period": "2026-03",
-      "avg_Porto": 122033024.49370983
+      "avg_Porto": 122058345.50509845
     },
     {
       "age_group": "46-50 th",
-      "debitur": 3826,
-      "Outstanding": 569594838539.76,
+      "debitur": 3825,
+      "Outstanding": 569303020589.91,
       "period": "2026-03",
-      "avg_Porto": 148874761.772023
+      "avg_Porto": 148837391.00389805
     },
     {
       "age_group": "> 65 th",
-      "debitur": 30955,
-      "Outstanding": 3928948370353.51,
+      "debitur": 30943,
+      "Outstanding": 3926479821735.06,
       "period": "2026-03",
-      "avg_Porto": 126924515.27551316
+      "avg_Porto": 126893960.56410368
     }
   ]
 };
 
 const productData = [
   {
+    "Product": "KREDIT UMUM PENSIUNAN (KUPEN)",
+    "Facility_Type": "New-Take Over",
+    "Amount": 194721923.96,
+    "Count": 1,
+    "Period": "2026-03"
+  },
+  {
     "Product": "KREDIT UMUM PENSIUNAN JANDA",
     "Facility_Type": "NEW",
-    "Amount": 1304708836.51,
-    "Count": 38,
+    "Amount": 1538926750.01,
+    "Count": 44,
     "Period": "2026-03"
   },
   {
     "Product": "KREDIT UMUM PENSIUNAN (KUPEN)",
     "Facility_Type": "NEW",
-    "Amount": 2114576495.14,
-    "Count": 49,
+    "Amount": 3079494711.05,
+    "Count": 66,
     "Period": "2026-03"
   },
   {
@@ -5312,10 +5321,10 @@ const OutstandingAnalysisData = [
   },
   {
     "period": "2026-03",
-    "outstanding": 19693317307037.867,
-    "Disburse": 3419285331.6499996,
-    "growth": -25469721658.57422,
-    "relending": 28889006990.22422
+    "outstanding": 19687996627511.383,
+    "Disburse": 4813143385.0199995,
+    "growth": -30790401185.058594,
+    "relending": 35603544570.07859
   }
 ];
 
